@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI — MAO English v1.1.2
+ORETACHI NI TSUBASA WA NAI — MAO English v1.1.3
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -44,6 +44,10 @@ https://github.com/googlefonts/morisawa-biz-ud-gothic
 Unofficial, noncommercial fan translation. Original work and trademarks
 belong to their respective owners.
 
+V1.1.3
+- Restores comic delivery in 19 lines: mangled greetings, false starts,
+  clipped thanks, childish taunts, and rambling speech.
+
 V1.1.2
 - Shows continuation pages as consecutive backlog entries.
 - Preserves dialogue text, timing, speaker names, and voice data.
@@ -60,5 +64,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0, v1.1.0, or v1.1.1 installation, run this installer again. Keep
+To update an existing v1.0.0, v1.1.0, v1.1.1, or v1.1.2 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.

@@ -1,13 +1,13 @@
 {
-  "version": "1.1.2",
-  "zip_sha256": "df830271c69e3bf5810871a1383eb8689d706269a77ecd27e44361698ba45f77",
-  "zip_bytes": 12447897,
+  "version": "1.1.3",
+  "zip_sha256": "05d7e52cbef321178379765929893dc584e94f6ece04140c315ce376e94d844e",
+  "zip_bytes": 12447834,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "4da11a4766d85745a06f72c30b86070c9ae6f801ef327b630074eb87aa9da96d",
-      "output_size": 22541080,
+      "output_sha256": "34c5141a321325fa9dc979c1a654fd99f8dab238b25aeb28d6fa1e4cfba48984",
+      "output_size": 22541289,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -32,14 +32,16 @@
       "previous_output_sha256": [
         "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
         "c06f673a37c57bcf698c8c7982bab3d92132adb49386c39f00f635c3e1a8fd2d",
-        "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3"
+        "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3",
+        "691b84b0fe7589fedfd6128c1c54114070f6c1f77a3f4f4d91a069f679484d55"
       ]
     }
   ],
   "font_sha256": "1443280b40c4620898f507e00f723f5d809f96b5bda01b3029fe28214185fda2",
   "font_english_metrics_match_tested_font": true,
-  "editorial_corrections": 860,
+  "editorial_corrections": 879,
+  "comic_delivery_corrections": 19,
   "voice_lyric_corrections": 850,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "The opening dialogue font and wrapping were visually reviewed on Wine. All 54 choice options were statically verified. The backlog fix passed 120 x86 emulation cases and the user confirmed the opening backlog test on Wine. No full-game playthrough or native Windows runtime test."
+  "runtime_scope": "The opening dialogue font and wrapping were visually reviewed on Wine. All 54 choice options were statically verified. The backlog fix passed 120 x86 emulation cases and the user confirmed the opening backlog test on Wine. The 19 v1.1.3 comic-delivery revisions passed source, encoding, 65-cell layout, and archive checks; they have not received a new in-game test. No full-game playthrough or native Windows runtime test."
 }

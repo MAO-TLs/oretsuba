@@ -1875,7 +1875,7 @@ export function ScriptBrowser() {
         </>
       ) : null}
 
-      <p className="reader-note">English script · v1.1.2.</p>
+      <p className="reader-note">English script · v1.1.3.</p>
     </section>
   );
 }

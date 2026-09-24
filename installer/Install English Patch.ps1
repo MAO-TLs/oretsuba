@@ -86,5 +86,5 @@ try {
    throw
   }
  } finally { Remove-Item -LiteralPath $stage -Recurse -Force }
- Write-Host 'English v1.1.2 installed. Originals are in MAO-original-backup. Start ORE_TUBA.EXE.' -ForegroundColor Green
+ Write-Host 'English v1.1.3 installed. Originals are in MAO-original-backup. Start ORE_TUBA.EXE.' -ForegroundColor Green
 } catch { Write-Host ('Installation stopped: ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }
