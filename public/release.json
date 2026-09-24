@@ -1,7 +1,7 @@
 {
-  "version": "1.1.1",
-  "zip_sha256": "c222766bcc34d159964c033e519666d13965a0505d0d7cf8e701852be9588bf9",
-  "zip_bytes": 12446315,
+  "version": "1.1.2",
+  "zip_sha256": "df830271c69e3bf5810871a1383eb8689d706269a77ecd27e44361698ba45f77",
+  "zip_bytes": 12447897,
   "files": [
     {
       "name": "SCRIPT.LPK",
@@ -27,8 +27,8 @@
     {
       "name": "ORE_TUBA.EXE",
       "source_sha256": "b269980423e9c85281046e358804b0d66d86001084bae23f5ac75b30ae9d8a4b",
-      "output_sha256": "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3",
-      "output_size": 1114112,
+      "output_sha256": "691b84b0fe7589fedfd6128c1c54114070f6c1f77a3f4f4d91a069f679484d55",
+      "output_size": 1118208,
       "previous_output_sha256": [
         "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
         "c06f673a37c57bcf698c8c7982bab3d92132adb49386c39f00f635c3e1a8fd2d",
@@ -41,5 +41,5 @@
   "editorial_corrections": 860,
   "voice_lyric_corrections": 850,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "The opening dialogue font and wrapping were visually reviewed on Wine. All 54 choice options were statically verified. No full-game playthrough or native Windows runtime test."
+  "runtime_scope": "The opening dialogue font and wrapping were visually reviewed on Wine. All 54 choice options were statically verified. The backlog fix passed 120 x86 emulation cases and the user confirmed the opening backlog test on Wine. No full-game playthrough or native Windows runtime test."
 }
