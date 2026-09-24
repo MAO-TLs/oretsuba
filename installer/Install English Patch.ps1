@@ -20,14 +20,19 @@ try {
   if (!(Test-Path -LiteralPath $path)) { throw "Missing $($file.name). Choose the game installation folder." }
   $hash = Hash $path
   if ($hash -eq $file.output_sha256) { continue }
-  if ($hash -ne $file.source_sha256) { throw "$($file.name) does not match Japanese v1.00 or this patch. No game files were changed." }
+  if ($hash -in @($file.previous_output_sha256)) {
+   $saved = Join-Path (Join-Path $GameFolder 'MAO-original-backup') $file.name
+   if (!(Test-Path -LiteralPath $saved) -or (Hash $saved) -ne $file.source_sha256) { throw 'Updating requires the matching original in MAO-original-backup. No game files were changed.' }
+  } elseif ($hash -ne $file.source_sha256) { throw "$($file.name) does not match Japanese v1.00 or this patch. No game files were changed." }
   $pending += $file
  }
  $stage = Join-Path $GameFolder ('MAO-patch-' + [Guid]::NewGuid().ToString('N'))
  New-Item -ItemType Directory -Path $stage | Out-Null
  try {
   foreach ($file in $pending) {
-   $source = [IO.File]::OpenRead((Join-Path $GameFolder $file.name))
+   $sourcePath = Join-Path $GameFolder $file.name
+   if ((Hash $sourcePath) -in @($file.previous_output_sha256)) { $sourcePath = Join-Path (Join-Path $GameFolder 'MAO-original-backup') $file.name }
+   $source = [IO.File]::OpenRead($sourcePath)
    $data = [IO.File]::OpenRead($dataPath)
    $targetPath = Join-Path $stage $file.name
    $target = [IO.File]::Create($targetPath)

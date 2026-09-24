@@ -12,13 +12,18 @@ def main():
  if hashlib.sha256(payload).hexdigest()!=m['payload_sha256'] or sha(HERE/'mao-font.ttf')!=m['font_sha256']:raise ValueError('Patch files are damaged; download them again.')
  for f in m['files']:
   file=game/f['name']
-  if not file.is_file() or sha(file) not in (f['source_sha256'],f['output_sha256']):raise ValueError(f"{f['name']} does not match the supported Japanese v1.00 or this English patch. No game files were changed.")
+  if not file.is_file() or sha(file) not in [f['source_sha256'],f['output_sha256']]+f.get('previous_output_sha256',[]):raise ValueError(f"{f['name']} does not match the supported Japanese v1.00 or this English patch. No game files were changed.")
+ for f in m['files']:
+  if sha(game/f['name']) in f.get('previous_output_sha256',[]):
+   saved=game/'MAO-original-backup'/f['name']
+   if not saved.is_file() or sha(saved)!=f['source_sha256']:raise ValueError('Updating requires the matching original in MAO-original-backup. No game files were changed.')
  with tempfile.TemporaryDirectory(prefix='mao-patch-',dir=game) as temp:
   stage=Path(temp);pending=[]
   for f in m['files']:
    file=game/f['name']
    if sha(file)==f['output_sha256']:continue
-   src=file.read_bytes();out=stage/f['name']
+   source=game/'MAO-original-backup'/f['name'] if sha(file) in f.get('previous_output_sha256',[]) else file
+   src=source.read_bytes();out=stage/f['name']
    with out.open('wb') as stream:
     for kind,offset,size in f['operations']:stream.write((src if kind=='source' else payload)[offset:offset+size])
    if out.stat().st_size!=f['output_size'] or sha(out)!=f['output_sha256']:raise ValueError('Patch verification failed before installation.')

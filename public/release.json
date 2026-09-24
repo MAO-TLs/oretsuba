@@ -1,13 +1,16 @@
 {
   "version": "1.0.0",
-  "zip_sha256": "62aba59f40ea73f9196340a4f806c999579dd161c1cb47af323dcac7ba710da0",
-  "zip_bytes": 11980328,
+  "zip_sha256": "ac841f487225a52b444f6a76bf1f2b005ce6c7649ba8565aa2d8b08a1a835047",
+  "zip_bytes": 19395196,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
-      "output_size": 22631235
+      "output_sha256": "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
+      "output_size": 22631235,
+      "previous_output_sha256": [
+        "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35"
+      ]
     },
     {
       "name": "SYS.LPK",
@@ -24,5 +27,6 @@
   ],
   "font_sha256": "709fcd41e3209fb765da750472f55ccdf925653e9fa7e1eb007cb65c8f749c75",
   "font_english_metrics_match_tested_font": true,
-  "runtime_scope": "Opening and prologue visually reviewed by the user on Wine; not a full playthrough or native Windows test."
+  "runtime_scope": "Opening and prologue visually reviewed by the user on Wine; not a full playthrough or native Windows test.",
+  "hotfix": "Bunny D name correction; no other dialogue edits."
 }

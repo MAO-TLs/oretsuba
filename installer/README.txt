@@ -43,3 +43,7 @@ https://github.com/googlefonts/morisawa-biz-ud-gothic
 
 Unofficial, noncommercial fan translation. Original work and trademarks
 belong to their respective owners.
+
+Same-version v1.0.0 hotfix: corrected Bunny D and Bunny throughout.
+To update an existing v1.0.0 installation, run this installer again. Keep
+the MAO-original-backup folder from the original installation.
