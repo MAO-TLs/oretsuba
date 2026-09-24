@@ -51,7 +51,8 @@ export default function Home() {
               </a>
             </div>
             <p className="compatibility">
-              English v1.0.0 · Japanese retail v1.00 required
+              19.4 MB · <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.0.0">Release notes</a>
+              {" "}· Version 1.0.0 · Japanese retail v1.00 required
             </p>
           </div>
 
