@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI — MAO English v1.0.0
+ORETACHI NI TSUBASA WA NAI — MAO English v1.1.0
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -44,6 +44,12 @@ https://github.com/googlefonts/morisawa-biz-ud-gothic
 Unofficial, noncommercial fan translation. Original work and trademarks
 belong to their respective owners.
 
-Same-version v1.0.0 hotfix: corrected Bunny D and Bunny throughout.
+V1.1.0
+- Corrects Bunny D's name throughout.
+- Revises casual dialogue and character voice after a complete script scan.
+- Relocalizes source-bound song, chant, and rap passages.
+- Uses the narrow game-font apostrophe in contractions.
+- Measures word wrapping against the locked BIZ UDGothic font.
+
 To update an existing v1.0.0 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.
