@@ -35,10 +35,10 @@ export default function Home() {
               NAI
             </h1>
             <p className="dek">
-              Ou Jackson’s masterpiece, now available for the first time in
-              English. A complete translation of <em>Oretachi ni Tsubasa wa Nai</em>,
-              preserving its unmistakable voices, restless humor, and the life
-              of the city after dark.
+              Navel’s magnum opus <em>Oretachi ni Tsubasa wa Nai</em> is now
+              available for the first time in English. A complete translation
+              from the Japanese, with attention to accuracy, character voice,
+              and natural literary English.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.0.0/OreTsuba-English-v1.0.0.zip">
