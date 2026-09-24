@@ -5,7 +5,7 @@ const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('public release retains the existing design and links its versioned patch',()=>{
  const home=read('dist/client/index.html');
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/download\/v1.1.0\/OreTsuba-English-v1.1.0.zip/);
+ assert.match(home,/releases\/download\/v1.1.1\/OreTsuba-English-v1.1.1.zip/);
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
  assert.doesNotMatch(home,/"\/assets\//);

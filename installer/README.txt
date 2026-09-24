@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI — MAO English v1.1.0
+ORETACHI NI TSUBASA WA NAI — MAO English v1.1.1
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -9,7 +9,7 @@ WINDOWS 10 / 11
 2. Double-click "Install English Patch.cmd".
 3. Select the installed Japanese game folder containing ORE_TUBA.EXE.
 4. Start ORE_TUBA.EXE normally.
-The installer installs the bundled BIZ UDGothic font for your user account,
+The installer installs the bundled MAO Gothic Q2 font for your user account,
 verifies all three patched files, and backs up the originals. If the game is
 installed in a protected folder, run the installer with permission to write
 there, or use an installation in a folder you own.
@@ -22,7 +22,7 @@ The font is copied to ~/Library/Fonts. Quit and restart the Wine wrapper
 before launching the game. The opening/prologue was tested with Sikarugir;
 other wrappers and native Windows have not received a full runtime test.
 
-The English game locks its text to BIZ UDGothic so the selected font option
+The English game locks its text to MAO Gothic Q2 so the selected font option
 cannot change its layout. Original title and decorative chapter logos remain.
 
 TO REMOVE THE PATCH
@@ -38,11 +38,16 @@ CREDITS
 Project Lead: MAO
 Translator: GPT-6 Astra
 Special Thanks: gambs
-Font: BIZ UDGothic, distributed under the SIL Open Font License; see OFL.txt.
+Font: MAO Gothic Q2, a BIZ UDGothic derivative with half-width curly quotes, distributed under the SIL Open Font License; see OFL.txt.
 https://github.com/googlefonts/morisawa-biz-ud-gothic
 
 Unofficial, noncommercial fan translation. Original work and trademarks
 belong to their respective owners.
+
+V1.1.1
+- Translates 54 choice options across 24 menus.
+- Fixes curly quote spacing while preserving opening and closing shapes.
+- Uses 65-character dialogue wrapping.
 
 V1.1.0
 - Corrects Bunny D's name throughout.
@@ -51,5 +56,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0 installation, run this installer again. Keep
+To update an existing v1.0.0 or v1.1.0 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.

@@ -1,17 +1,21 @@
 {
-  "version": "1.1.0",
-  "zip_sha256": "b10de8ca45778898c5218591d4078068aeb83a168c621fb6add83d596c67ddb3",
-  "zip_bytes": 11975561,
+  "version": "1.1.1",
+  "zip_sha256": "c222766bcc34d159964c033e519666d13965a0505d0d7cf8e701852be9588bf9",
+  "zip_bytes": 12446315,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "aa4beeca05a29a930e400b7dd356303606a97502a56e1be1ceedcdbc43fe310c",
-      "output_size": 22621055,
+      "output_sha256": "4da11a4766d85745a06f72c30b86070c9ae6f801ef327b630074eb87aa9da96d",
+      "output_size": 22541080,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
-        "952ff0af64f62e6e1ffc745185533f10d25ea7a1211b1e06fd361baacbc04b8a"
+        "952ff0af64f62e6e1ffc745185533f10d25ea7a1211b1e06fd361baacbc04b8a",
+        "aa4beeca05a29a930e400b7dd356303606a97502a56e1be1ceedcdbc43fe310c",
+        "48ef5d8b8113e4bfe61c56e51915a1b24b36c741aaf5d37d7204fa0c9630e2d9",
+        "145c23b49531e1e7b92982065f66e8049c0d074fadcdc127a82f2f0db37c0bbc",
+        "4da11a4766d85745a06f72c30b86070c9ae6f801ef327b630074eb87aa9da96d"
       ]
     },
     {
@@ -23,14 +27,19 @@
     {
       "name": "ORE_TUBA.EXE",
       "source_sha256": "b269980423e9c85281046e358804b0d66d86001084bae23f5ac75b30ae9d8a4b",
-      "output_sha256": "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
-      "output_size": 1114112
+      "output_sha256": "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3",
+      "output_size": 1114112,
+      "previous_output_sha256": [
+        "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
+        "c06f673a37c57bcf698c8c7982bab3d92132adb49386c39f00f635c3e1a8fd2d",
+        "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3"
+      ]
     }
   ],
-  "font_sha256": "709fcd41e3209fb765da750472f55ccdf925653e9fa7e1eb007cb65c8f749c75",
+  "font_sha256": "1443280b40c4620898f507e00f723f5d809f96b5bda01b3029fe28214185fda2",
   "font_english_metrics_match_tested_font": true,
   "editorial_corrections": 860,
   "voice_lyric_corrections": 850,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "The v1.0 opening and prologue were visually reviewed on Wine. V1.1 has static archive, layout, and installer validation but no new full-game playthrough or native Windows runtime test."
+  "runtime_scope": "The opening dialogue font and wrapping were visually reviewed on Wine. All 54 choice options were statically verified. No full-game playthrough or native Windows runtime test."
 }

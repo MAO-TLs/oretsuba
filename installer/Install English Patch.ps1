@@ -54,11 +54,17 @@ try {
   # Install the licensed font for this user, without administrator privileges.
   $fontDir = Join-Path $env:LOCALAPPDATA 'Microsoft\Windows\Fonts'
   New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
-  $installedFont = Join-Path $fontDir 'MAO-BIZUDGothic-Regular.ttf'
-  Copy-Item -LiteralPath $fontPath -Destination $installedFont -Force
+  $installedFont = Join-Path $fontDir ('MAOGothicQ2-' + $manifest.font_sha256 + '.ttf')
+  # Fonts may remain locked by Windows after the game exits. Never overwrite
+  # an installed font: identical content is reused, new content gets a new path.
+  if (Test-Path -LiteralPath $installedFont) {
+   if ((Hash $installedFont) -ne $manifest.font_sha256) { throw 'An installed font file is damaged. No game files were changed.' }
+  } else {
+   Copy-Item -LiteralPath $fontPath -Destination $installedFont
+  }
   $key = 'HKCU:\Software\Microsoft\Windows NT\CurrentVersion\Fonts'
   New-Item -Path $key -Force | Out-Null
-  New-ItemProperty -Path $key -Name 'BIZ UDGothic (TrueType)' -Value $installedFont -PropertyType String -Force | Out-Null
+  New-ItemProperty -Path $key -Name 'MAO Gothic Q2 (TrueType)' -Value $installedFont -PropertyType String -Force | Out-Null
   Add-Type -TypeDefinition 'using System; using System.Runtime.InteropServices; public class MaoFonts { [DllImport("gdi32.dll", CharSet=CharSet.Unicode)] public static extern int AddFontResourceEx(string p, uint f, IntPtr r); [DllImport("user32.dll", CharSet=CharSet.Unicode)] public static extern IntPtr SendMessageTimeout(IntPtr h, uint m, IntPtr w, IntPtr l, uint f, uint t, out IntPtr r); }'
   if ([MaoFonts]::AddFontResourceEx($installedFont, 0, [IntPtr]::Zero) -eq 0) { throw 'Could not load the bundled font. No game files were changed.' }
   $result = [IntPtr]::Zero
@@ -80,5 +86,5 @@ try {
    throw
   }
  } finally { Remove-Item -LiteralPath $stage -Recurse -Force }
- Write-Host 'English v1.1.0 installed. Originals are in MAO-original-backup. Start ORE_TUBA.EXE.' -ForegroundColor Green
+ Write-Host 'English v1.1.1 installed. Originals are in MAO-original-backup. Start ORE_TUBA.EXE.' -ForegroundColor Green
 } catch { Write-Host ('Installation stopped: ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }
