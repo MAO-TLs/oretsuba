@@ -1,0 +1,14 @@
+/* WA2 layout is unchanged; only the OreTsuba palette differs. */
+:root { --ink: #291622; --ink-soft: #755d6d; --paper: #fcf8fa; --ice: #f8d8e8; --ice-deep: #f59bc9; --ice-ink: #9c3269; --blue: #ae326e; --navy: #300f25; --line: rgba(74,23,50,.16); }
+.hero, .reader-header { background: #240c1b; }
+.reader-page { background: #f7f0f4; }
+footer { background: #1f0a18; }
+.reader-controls { box-shadow: 0 12px 36px rgba(70,17,48,.08); }
+.chapter-card:hover, .audit-group > summary, .line-todokanai, .concordance-route-filter button:hover:not(:disabled), .concordance-hit-link:hover, .concordance-more:hover { background: #faf3f7; }
+.control input:focus-visible, .control select:focus-visible, .script-picker button:focus-visible, .scope-options input:focus-visible + span, .comparison-toggle input:focus-visible, .concordance-route-filter button:focus-visible, .concordance-hit-link:focus-visible, .concordance-more:focus-visible, .back-to-concordance:focus-visible, .line-ref:focus-visible, .back-to-controls:focus-visible, .chapter-card:focus-visible { outline-color: rgba(189,53,119,.42); }
+.script-line:target, .script-line:focus-visible { outline-color: rgba(189,53,119,.55); }
+.hero::after { background: linear-gradient(90deg,rgba(26,7,20,.92) 0%,rgba(35,8,26,.78) 39%,rgba(32,8,23,.20) 70%,rgba(24,5,18,.05) 100%); }
+.hero .button-primary { background: #efa1c9; color: #2e1022; }
+@media(max-width:900px) { .hero::after { background: linear-gradient(90deg,rgba(26,7,20,.95) 0%,rgba(35,8,26,.84) 58%,rgba(24,5,18,.36) 100%); } }
+/* Five content sections, retaining WA2's tablet and phone breakpoints. */
+@media(min-width:901px) { .chapter-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } .chapter-card { min-width: 0; padding: 24px 16px; gap: 12px; } }

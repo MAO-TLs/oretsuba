@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "zip_sha256": "62aba59f40ea73f9196340a4f806c999579dd161c1cb47af323dcac7ba710da0",
+  "zip_bytes": 11980328,
+  "files": [
+    {
+      "name": "SCRIPT.LPK",
+      "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
+      "output_sha256": "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
+      "output_size": 22631235
+    },
+    {
+      "name": "SYS.LPK",
+      "source_sha256": "d08649a4d11f923c912615737473ee96033872e7668ed1dd6ae7f04e29c72155",
+      "output_sha256": "a9d8316c349af31ad845ba73eda5727f451684fafe887b7f1a8fe9c74a69933f",
+      "output_size": 139121695
+    },
+    {
+      "name": "ORE_TUBA.EXE",
+      "source_sha256": "b269980423e9c85281046e358804b0d66d86001084bae23f5ac75b30ae9d8a4b",
+      "output_sha256": "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
+      "output_size": 1114112
+    }
+  ],
+  "font_sha256": "709fcd41e3209fb765da750472f55ccdf925653e9fa7e1eb007cb65c8f749c75",
+  "font_english_metrics_match_tested_font": true,
+  "runtime_scope": "Opening and prologue visually reviewed by the user on Wine; not a full playthrough or native Windows test."
+}
