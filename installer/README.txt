@@ -1,10 +1,10 @@
-V1.1.5 DISPLAY FIXES
-- Ellipsis dots sit at the baseline, with unchanged wrapping width.
-- Unnamed narration no longer duplicates continuation fragments on repeated backlog opens.
-- Window and dialog titles display in English without changing existing save locations.
-- Existing saved duplicate history entries remain; new entries no longer multiply.
+V1.1.6 BACKLOG AND TITLE FIXES
+- Opening and closing history preserves the current dialogue page.
+- Unread continuation pages remain hidden until reached.
+- Window and dialog titles use Oretachi ni Tsubasa wa Nai.
+- Existing script, font, wrapping and save paths are unchanged.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.1.5
+ORETACHI NI TSUBASA WA NAI — MAO English v1.1.6
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -74,5 +74,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, or v1.1.3 installation, run this installer again. Keep
+To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, or v1.1.5 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.

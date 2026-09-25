@@ -1,7 +1,7 @@
 {
-  "version": "1.1.5",
-  "zip_sha256": "a0766cf883c57a93eeb8a04c41db41a236537d49b8e557d6d97c431938544d42",
-  "zip_bytes": 12449350,
+  "version": "1.1.6",
+  "zip_sha256": "b815f73663b472e1574ad557ff79b25d9d8cc917ed7121ca1a1d2d5c87056836",
+  "zip_bytes": 12451327,
   "files": [
     {
       "name": "SCRIPT.LPK",
@@ -29,15 +29,16 @@
     {
       "name": "ORE_TUBA.EXE",
       "source_sha256": "b269980423e9c85281046e358804b0d66d86001084bae23f5ac75b30ae9d8a4b",
-      "output_sha256": "26f8acbb242162e8a64f2a7ad99ee82f06c4e89adeb4b00635eec13c60cebc0e",
-      "output_size": 1118720,
+      "output_sha256": "dd3d2bcc427bc9afec491ec0e16bd3ba85f43d33e042b20372094ebb545415f8",
+      "output_size": 1126400,
       "previous_output_sha256": [
         "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
         "c06f673a37c57bcf698c8c7982bab3d92132adb49386c39f00f635c3e1a8fd2d",
         "1c577782a338192df3301d56574cf9823bd73a56f00ae5758e7796b8f022a1c3",
         "691b84b0fe7589fedfd6128c1c54114070f6c1f77a3f4f4d91a069f679484d55",
         "aade9b1646dd3a1f103983997530a795169faba2a677f8a409b04c9edcd8b221",
-        "26f8acbb242162e8a64f2a7ad99ee82f06c4e89adeb4b00635eec13c60cebc0e"
+        "26f8acbb242162e8a64f2a7ad99ee82f06c4e89adeb4b00635eec13c60cebc0e",
+        "aaa4a577941843883756fda517a51b5c0d0a97ccc50b785ff024ef40ff67a2c1"
       ]
     }
   ],
@@ -48,10 +49,13 @@
   "comic_delivery_corrections": 19,
   "voice_lyric_corrections": 850,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "Opening ellipsis and backlog continuation display approved by the user on Wine. Backlog: 142 x86 regression cases including unnamed narration with uninitialized name lengths. Window captions: 48 x86 cases; no separate in-game caption screenshot. No full-game playthrough or native Windows runtime test.",
+  "runtime_scope": "Backlog-resume behavior approved by the user in the private Wine build. 142 history record and 35 native lifecycle checks pass. Title-only change validated with 48 x86 wrapper cases. No full-game playthrough or native Windows runtime test.",
+  "private_test": false,
   "display_fixes": [
+    "Preserve live dialogue page when closing history",
+    "Hide unread continuation pages",
     "Baseline ellipsis with unchanged advance width",
     "Prevent duplicate backlog continuations for unnamed narration",
-    "English window and dialog titles without changing save paths"
+    "Window and dialog title: Oretachi ni Tsubasa wa Nai; save paths unchanged"
   ]
 }
