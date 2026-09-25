@@ -1,4 +1,10 @@
-ORETACHI NI TSUBASA WA NAI — MAO English v1.1.4
+V1.1.5 DISPLAY FIXES
+- Ellipsis dots sit at the baseline, with unchanged wrapping width.
+- Unnamed narration no longer duplicates continuation fragments on repeated backlog opens.
+- Window and dialog titles display in English without changing existing save locations.
+- Existing saved duplicate history entries remain; new entries no longer multiply.
+
+ORETACHI NI TSUBASA WA NAI — MAO English v1.1.5
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -9,7 +15,7 @@ WINDOWS 10 / 11
 2. Double-click "Install English Patch.cmd".
 3. Select the installed Japanese game folder containing ORE_TUBA.EXE.
 4. Start ORE_TUBA.EXE normally.
-The installer installs the bundled MAO Gothic Q2 font for your user account,
+The installer installs the bundled MAO Gothic Q3 font for your user account,
 verifies all three patched files, and backs up the originals. If the game is
 installed in a protected folder, run the installer with permission to write
 there, or use an installation in a folder you own.
@@ -22,7 +28,7 @@ The font is copied to ~/Library/Fonts. Quit and restart the Wine wrapper
 before launching the game. The opening/prologue was tested with Sikarugir;
 other wrappers and native Windows have not received a full runtime test.
 
-The English game locks its text to MAO Gothic Q2 so the selected font option
+The English game locks its text to MAO Gothic Q3 so the selected font option
 cannot change its layout. Original title and decorative chapter logos remain.
 
 TO REMOVE THE PATCH
@@ -38,7 +44,7 @@ CREDITS
 Project Lead: MAO
 Translator: GPT-6 Astra
 Special Thanks: gambs
-Font: MAO Gothic Q2, a BIZ UDGothic derivative with half-width curly quotes, distributed under the SIL Open Font License; see OFL.txt.
+Font: MAO Gothic Q3, a BIZ UDGothic derivative with half-width curly quotes and a baseline ellipsis, distributed under the SIL Open Font License; see OFL.txt.
 https://github.com/googlefonts/morisawa-biz-ud-gothic
 
 Unofficial, noncommercial fan translation. Original work and trademarks
