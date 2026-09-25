@@ -17,6 +17,7 @@ def main() -> None:
     for path in html_files:
         original = path.read_text(encoding="utf-8")
         updated = original.replace("/assets/", PREFIX)
+        updated = updated.replace('href="/favicon.svg"', 'href="/oretsuba/favicon.svg"')
         replacements += original.count("/assets/")
         path.write_text(updated, encoding="utf-8")
 
