@@ -5,7 +5,7 @@ from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
- p=argparse.ArgumentParser(description='Install OreTsuba English v1.1.3. Close the game first.')
+ p=argparse.ArgumentParser(description='Install OreTsuba English v1.1.4. Close the game first.')
  p.add_argument('game_folder',type=Path);p.add_argument('--no-font-install',action='store_true',help='For package verification only; the game requires the bundled font.')
  args=p.parse_args();game=args.game_folder.resolve();m=json.loads((HERE/'patch.json').read_text())
  payload=(HERE/'patch.dat').read_bytes()
@@ -45,7 +45,7 @@ def main():
   except Exception:
    for f in installed:shutil.copy2(backup/f['name'],game/f['name'])
    raise
- print('English v1.1.3 installed. Originals are in MAO-original-backup. Restart the game and your Wine wrapper to load the font.')
+ print('English v1.1.4 installed. Originals are in MAO-original-backup. Restart the game and your Wine wrapper to load the font.')
 if __name__=='__main__':
  try:main()
  except Exception as e:print('Installation stopped: '+str(e),file=sys.stderr);sys.exit(1)
