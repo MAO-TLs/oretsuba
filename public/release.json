@@ -1,13 +1,13 @@
 {
   "version": "1.2.0",
-  "zip_sha256": "c44fa1b1015b2ffcd7b4e96347e3a7247b73171f3667fcfd8abd976c07c4f60b",
-  "zip_bytes": 12446804,
+  "zip_sha256": "ef6d743e83d2a8e15ae22562f4304261cff449003afe291a3cb21d098992a0f7",
+  "zip_bytes": 12447038,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "a2e0dd832df3b967017b78f985a192f64fc29e26ee87f96a8d0b3ddec4214ab9",
-      "output_size": 22521922,
+      "output_sha256": "05c89dfc003487ffa6023aab7ad2d1d7ca13c41876c841ebb525382ceb8162f1",
+      "output_size": 22521605,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -17,7 +17,8 @@
         "145c23b49531e1e7b92982065f66e8049c0d074fadcdc127a82f2f0db37c0bbc",
         "4da11a4766d85745a06f72c30b86070c9ae6f801ef327b630074eb87aa9da96d",
         "34c5141a321325fa9dc979c1a654fd99f8dab238b25aeb28d6fa1e4cfba48984",
-        "5af71abee20a325d92bf1c62cc22c006ba145e2ec7fb64d08a8cd2e09f526aab"
+        "5af71abee20a325d92bf1c62cc22c006ba145e2ec7fb64d08a8cd2e09f526aab",
+        "a2e0dd832df3b967017b78f985a192f64fc29e26ee87f96a8d0b3ddec4214ab9"
       ]
     },
     {
@@ -44,8 +45,8 @@
   ],
   "font_sha256": "d122c7543f61af5c70464c0ea753d8add48589b9183c3ce45170255c37090d3b",
   "font_english_metrics_match_tested_font": true,
-  "editorial_corrections": 6714,
-  "v120_unique_refs": 5852,
+  "editorial_corrections": 6957,
+  "v120_unique_refs": 6099,
   "register_fidelity_edits": 4489,
   "recurrence_alignment_edits": 1382,
   "period_language_corrections": 31,

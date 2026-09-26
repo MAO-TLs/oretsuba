@@ -8,7 +8,7 @@ test('public release retains the existing design and links its versioned patch',
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
  assert.match(home,/releases\/download\/v1.2.0\/OreTsuba-English-v1.2.0.zip/);
  assert.equal(release.version,'1.2.0');
- assert.equal(release.v120_unique_refs,5852);
+ assert.equal(release.v120_unique_refs,6099);
  assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.0\\.zip\\n$'));
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
