@@ -4,8 +4,12 @@ import {readFileSync} from 'node:fs';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('public release retains the existing design and links its versioned patch',()=>{
  const home=read('dist/client/index.html');
+ const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/download\/v1.1.6\/OreTsuba-English-v1.1.6.zip/);
+ assert.match(home,/releases\/download\/v1.2.0\/OreTsuba-English-v1.2.0.zip/);
+ assert.equal(release.version,'1.2.0');
+ assert.equal(release.v120_unique_refs,5852);
+ assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.0\\.zip\\n$'));
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
  assert.doesNotMatch(home,/"\/assets\//);
@@ -14,6 +18,7 @@ test('public release retains the existing design and links its versioned patch',
 test('all 389 scripts and all 57797 bilingual entries are coherent',()=>{
  const index=JSON.parse(read('public/script-data/index.json'));
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
+ assert.equal(index.version,'v1.2.0');assert.equal(corpus.version,'v1.2.0');
  assert.equal(index.totalLines,57797);assert.equal(corpus.totalLines,57797);
  assert.ok(!index.routes.some(r=>r.id==='section-03c'));
  const merged=index.routes.find(r=>r.id==='section-03');assert.equal(merged.lineCount,20062);assert.equal(merged.scripts.length,116);
