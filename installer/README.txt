@@ -1,10 +1,23 @@
-V1.1.6 BACKLOG AND TITLE FIXES
-- Opening and closing history preserves the current dialogue page.
-- Unread continuation pages remain hidden until reached.
-- Window and dialog titles use Oretachi ni Tsubasa wa Nai.
-- Existing script, font, wrapping and save paths are unchanged.
+V1.2.1 WORDPLAY EQUIVALENCE REVISION
+- Revises 264 source-bound lines so Japanese puns, homophones, verbal
+  mistakes, altered idioms, and comic speech use equivalent English devices.
+- Recasts Japanese-only pronoun, address-form, and demonstrative cues as
+  visible English cues instead of explaining grammar the reader cannot see.
+- Localizes stray honorific and fandom jargon into ordinary English.
+- Aligns localized jokes across routes and repeated passages.
+- Preserves plot meaning and avoids strengthening implications beyond the
+  Japanese source.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.1.6
+V1.2.0 REGISTER AND RECURRENCE REVISION
+- Revises thousands of lines so casual, rough, formal, comic, and lyrical
+  Japanese registers carry the same force in natural English.
+- Aligns substantive exact recurrences across routes and speaker labels.
+- Retains short contextual variants where Japanese omits the subject,
+  predicate, referent, or performance detail needed by English.
+- Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
+  window title, and save paths.
+
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.1
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -74,5 +87,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, or v1.1.5 installation, run this installer again. Keep
+To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, or v1.2.0 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.
