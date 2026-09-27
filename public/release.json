@@ -1,13 +1,13 @@
 {
-  "version": "1.2.2",
-  "zip_sha256": "29c6f8f322b0d262f9a2f2427a67853b2255aa0534f6873884a78f07346750ff",
-  "zip_bytes": 12448100,
+  "version": "1.2.3",
+  "zip_sha256": "92072b00e0abbef54847fc64cc73e2bbce6f5bcc8e53ecc1e38dd3e834e4b139",
+  "zip_bytes": 12450788,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "4981af60bd748fd5f65bc71c2db44f1b827a6b0a79729c1b8b7f99811d6b2508",
-      "output_size": 22521564,
+      "output_sha256": "ad6c53f28c3a2bb5abb63b08d35c13768c07d15d4b044cea483bbb5808ba36ca",
+      "output_size": 22528443,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -27,7 +27,8 @@
         "f9ab96932fd4553df1a5a5f084f82049ce7ab663fe28ad7baf9f05afe491d9b2",
         "22f33cdcbd718a413a3ff8ed3468ac5e5595bac072cb66fa7ea8746d55762d5b",
         "b6a3e422a73407ef8a59e430dc526ea37e0db8289611a2b7aad7f764ce8826e5",
-        "3a350e55e15f0cf90ba9e6e5d471ddd2ddbb39885699027d0037e57b75f6d862"
+        "3a350e55e15f0cf90ba9e6e5d471ddd2ddbb39885699027d0037e57b75f6d862",
+        "4981af60bd748fd5f65bc71c2db44f1b827a6b0a79729c1b8b7f99811d6b2508"
       ]
     },
     {
@@ -54,8 +55,8 @@
   ],
   "font_sha256": "d122c7543f61af5c70464c0ea753d8add48589b9183c3ce45170255c37090d3b",
   "font_english_metrics_match_tested_font": true,
-  "editorial_corrections": 7735,
-  "v120_unique_refs": 6879,
+  "editorial_corrections": 8722,
+  "v120_unique_refs": 8722,
   "register_fidelity_edits": 4489,
   "recurrence_alignment_edits": 1382,
   "period_language_corrections": 31,
@@ -66,9 +67,11 @@
   "wordplay_equivalence_clusters_applied": 163,
   "metalinguistic_localization_records": 29,
   "linguistic_device_lines_changed": 263,
+  "hepburn_name_dialogue_rows": 1044,
+  "american_english_dialogue_rows": 75,
   "reported_display_text_corrections": 1,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "The reported table dialogue, enlarged console-port dialogue, and all 765 scene summaries passed source binding, CP932 encoding, archive reconstruction, and layout regressions. In-game visual verification of these three reports is pending. No full-game playthrough or native Windows runtime test.",
+  "runtime_scope": "All 765 scene summaries passed source binding, CP932 encoding, real-line-feed word wrapping, and archive reconstruction. Name and American-English audits passed against dialogue, scene summaries, and speaker labels. In-game v1.2.3 visual verification is pending. No full-game playthrough or native Windows runtime test.",
   "private_test": false,
   "display_fixes": [
     "Preserve live dialogue page when closing history",
@@ -76,7 +79,7 @@
     "Baseline ellipsis with unchanged advance width",
     "Prevent duplicate backlog continuations for unnamed narration",
     "Window and dialog title: Oretachi ni Tsubasa wa Nai; save paths unchanged",
-    "Wrap scene-skip descriptions at English word boundaries",
+    "Wrap scene-skip descriptions with real line feeds at English word boundaries",
     "Reserve additional right margin for enlarged dialogue",
     "Compress the reported table line to two safe rows"
   ]

@@ -1,3 +1,11 @@
+V1.2.3 NAME, LANGUAGE, AND SCENE-SUMMARY FIXES
+- Normalizes Japanese names to consistent ASCII Hepburn forms with explicit
+  long vowels, while preserving the Hariu/Haryuu identity distinction.
+- Uses American English spellings and ordinary American vocabulary throughout.
+- Replaces visible scene-summary backslashes with real line feeds and wraps
+  descriptions only between complete words.
+- Corrects the installer version displayed after installation.
+
 V1.2.1 WORDPLAY EQUIVALENCE REVISION
 - Revises 264 source-bound lines so Japanese puns, homophones, verbal
   mistakes, altered idioms, and comic speech use equivalent English devices.
@@ -17,7 +25,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.2
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.3
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
@@ -92,5 +100,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, v1.2.0, or v1.2.1 installation, run this installer again. Keep
+To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, v1.2.0, v1.2.1, or v1.2.2 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.
