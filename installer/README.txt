@@ -17,7 +17,12 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.1
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.2
+
+V1.2.2 DISPLAY FIXES
+- Wraps scene-skip descriptions only at English word boundaries.
+- Gives enlarged dialogue a safer right margin.
+- Compresses the reported table measurement to two complete rows.
 
 Requires the Japanese retail v1.00 installation. The patch checks exact file
 hashes and refuses other editions or modified files. It does not include the
@@ -87,5 +92,5 @@ V1.1.0
 - Uses the narrow game-font apostrophe in contractions.
 - Measures word wrapping against the locked BIZ UDGothic font.
 
-To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, or v1.2.0 installation, run this installer again. Keep
+To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, v1.2.0, or v1.2.1 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.

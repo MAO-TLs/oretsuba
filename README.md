@@ -1,4 +1,4 @@
-# Oretachi ni Tsubasa wa Nai — MAO English v1.2.1
+# Oretachi ni Tsubasa wa Nai — MAO English v1.2.2
 
 [Download and installation](https://mao-tls.github.io/oretsuba/) · [Script browser](https://mao-tls.github.io/oretsuba/script/)
 

@@ -6,15 +6,16 @@ test('public release retains the existing design and links its versioned patch',
  const home=read('dist/client/index.html');
  const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/download\/v1.2.1\/OreTsuba-English-v1.2.1.zip/);
- assert.equal(release.version,'1.2.1');
- assert.equal(release.v120_unique_refs,6878);
+ assert.match(home,/releases\/download\/v1.2.2\/OreTsuba-English-v1.2.2.zip/);
+ assert.equal(release.version,'1.2.2');
+ assert.equal(release.v120_unique_refs,6879);
  assert.equal(release.wordplay_equivalence_records,240);
  assert.equal(release.wordplay_equivalence_lines_changed,236);
  assert.equal(release.wordplay_equivalence_clusters_applied,163);
  assert.equal(release.metalinguistic_localization_records,29);
  assert.equal(release.linguistic_device_lines_changed,263);
- assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.1\\.zip\\n$'));
+ assert.equal(release.reported_display_text_corrections,1);
+ assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.2\\.zip\\n$'));
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
  assert.doesNotMatch(home,/"\/assets\//);
@@ -23,7 +24,7 @@ test('public release retains the existing design and links its versioned patch',
 test('all 389 scripts and all 57797 bilingual entries are coherent',()=>{
  const index=JSON.parse(read('public/script-data/index.json'));
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
- assert.equal(index.version,'v1.2.1');assert.equal(corpus.version,'v1.2.1');
+ assert.equal(index.version,'v1.2.2');assert.equal(corpus.version,'v1.2.2');
  assert.equal(index.totalLines,57797);assert.equal(corpus.totalLines,57797);
  assert.ok(!index.routes.some(r=>r.id==='section-03c'));
  const merged=index.routes.find(r=>r.id==='section-03');assert.equal(merged.lineCount,20062);assert.equal(merged.scripts.length,116);
@@ -39,4 +40,9 @@ test('all 389 scripts and all 57797 bilingual entries are coherent',()=>{
   }count+=payload.lines.length;
  }
  assert.equal(count,57797);assert.equal(scripts,389);
+});
+test('v1.2.2 reader carries the reported display-safe dialogue revision',()=>{
+ const script=JSON.parse(read('public/script-data/s02_03f.json'));
+ const line=script.lines.find(row=>row.ref==='oretsuba:section-02:s02_03f:0000e977');
+ assert.equal(line.english,'“Hmm. A table ninety centimeters wide... Exactly five B5 issues of *Monthly S&M Erotichronicle* fit side by side without a gap...”');
 });
