@@ -1,3 +1,8 @@
+V1.2.4 SPEAKER NAMEPLATE FIT
+- Shortens 79 overlong descriptive speaker labels across 229 occurrences.
+- Keeps proper character names in full explicit-vowel Hepburn.
+- Enforces a 17-glyph maximum for every translated speaker label.
+
 V1.2.3 NAME, LANGUAGE, AND SCENE-SUMMARY FIXES
 - Normalizes Japanese names to consistent ASCII Hepburn forms with explicit
   long vowels, while preserving the Hariu/Haryuu identity distinction.
@@ -25,7 +30,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.3
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.4
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.

@@ -1,13 +1,13 @@
 {
-  "version": "1.2.3",
-  "zip_sha256": "92072b00e0abbef54847fc64cc73e2bbce6f5bcc8e53ecc1e38dd3e834e4b139",
-  "zip_bytes": 12450788,
+  "version": "1.2.4",
+  "zip_sha256": "f5197fdc40bc70cdffd9445b30ff8b48f8b71fc1103acc3cd75f8319844f4c92",
+  "zip_bytes": 12450991,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "ad6c53f28c3a2bb5abb63b08d35c13768c07d15d4b044cea483bbb5808ba36ca",
-      "output_size": 22528443,
+      "output_sha256": "85e451a374165bec604eaee0cd3d44b110a2ffcd9ee10aec6c34b06179bf65d3",
+      "output_size": 22525840,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -28,7 +28,8 @@
         "22f33cdcbd718a413a3ff8ed3468ac5e5595bac072cb66fa7ea8746d55762d5b",
         "b6a3e422a73407ef8a59e430dc526ea37e0db8289611a2b7aad7f764ce8826e5",
         "3a350e55e15f0cf90ba9e6e5d471ddd2ddbb39885699027d0037e57b75f6d862",
-        "4981af60bd748fd5f65bc71c2db44f1b827a6b0a79729c1b8b7f99811d6b2508"
+        "4981af60bd748fd5f65bc71c2db44f1b827a6b0a79729c1b8b7f99811d6b2508",
+        "ad6c53f28c3a2bb5abb63b08d35c13768c07d15d4b044cea483bbb5808ba36ca"
       ]
     },
     {
@@ -69,9 +70,12 @@
   "linguistic_device_lines_changed": 263,
   "hepburn_name_dialogue_rows": 1044,
   "american_english_dialogue_rows": 75,
+  "speaker_label_fit_forms": 79,
+  "speaker_label_fit_records": 229,
+  "speaker_nameplate_glyph_limit": 17,
   "reported_display_text_corrections": 1,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "All 765 scene summaries passed source binding, CP932 encoding, real-line-feed word wrapping, and archive reconstruction. Name and American-English audits passed against dialogue, scene summaries, and speaker labels. In-game v1.2.3 visual verification is pending. No full-game playthrough or native Windows runtime test.",
+  "runtime_scope": "All 765 scene summaries passed source binding, CP932 encoding, real-line-feed word wrapping, and archive reconstruction. Name and American-English audits passed against dialogue, scene summaries, and speaker labels. In-game v1.2.4 visual verification is pending. No full-game playthrough or native Windows runtime test.",
   "private_test": false,
   "display_fixes": [
     "Preserve live dialogue page when closing history",
@@ -81,6 +85,7 @@
     "Window and dialog title: Oretachi ni Tsubasa wa Nai; save paths unchanged",
     "Wrap scene-skip descriptions with real line feeds at English word boundaries",
     "Reserve additional right margin for enlarged dialogue",
-    "Compress the reported table line to two safe rows"
+    "Compress the reported table line to two safe rows",
+    "Fit all translated speaker labels within the 17-glyph nameplate"
   ]
 }
