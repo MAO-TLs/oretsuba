@@ -1,3 +1,7 @@
+V1.2.5 CRASH HOTFIX
+- Replaces one symbolic outburst with a faithful plain-text yell so the engine
+  no longer receives a raw percent/control-like symbol sequence.
+
 V1.2.4 SPEAKER NAMEPLATE FIT
 - Shortens 79 overlong descriptive speaker labels across 229 occurrences.
 - Keeps proper character names in full explicit-vowel Hepburn.
@@ -30,7 +34,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.4
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.5
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
