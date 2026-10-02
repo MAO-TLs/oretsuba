@@ -1,3 +1,8 @@
+V1.2.6 DISPLAY AND EMPHASIS FIXES
+- Renders marked emphasis in game using slanted versions of the same font.
+- Preserves normal text, character spacing, and dialogue wrapping.
+- Fixes literal ampersands cutting off dialogue.
+
 V1.2.5 CRASH HOTFIX
 - Replaces one symbolic outburst with a faithful plain-text yell so the engine
   no longer receives a raw percent/control-like symbol sequence.
@@ -34,7 +39,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.5
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.6
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
@@ -50,7 +55,7 @@ WINDOWS 10 / 11
 2. Double-click "Install English Patch.cmd".
 3. Select the installed Japanese game folder containing ORE_TUBA.EXE.
 4. Start ORE_TUBA.EXE normally.
-The installer installs the bundled MAO Gothic Q3 font for your user account,
+The installer installs the bundled MAO Gothic Q4I font for your user account,
 verifies all three patched files, and backs up the originals. If the game is
 installed in a protected folder, run the installer with permission to write
 there, or use an installation in a folder you own.
@@ -63,7 +68,7 @@ The font is copied to ~/Library/Fonts. Quit and restart the Wine wrapper
 before launching the game. The opening/prologue was tested with Sikarugir;
 other wrappers and native Windows have not received a full runtime test.
 
-The English game locks its text to MAO Gothic Q3 so the selected font option
+The English game locks its text to MAO Gothic Q4I so the selected font option
 cannot change its layout. Original title and decorative chapter logos remain.
 
 TO REMOVE THE PATCH
@@ -79,7 +84,7 @@ CREDITS
 Project Lead: MAO
 Translator: GPT-6 Astra
 Special Thanks: gambs
-Font: MAO Gothic Q3, a BIZ UDGothic derivative with half-width curly quotes and a baseline ellipsis, distributed under the SIL Open Font License; see OFL.txt.
+Font: MAO Gothic Q4I, a BIZ UDGothic derivative with half-width curly quotes and a baseline ellipsis, distributed under the SIL Open Font License; see OFL.txt.
 https://github.com/googlefonts/morisawa-biz-ud-gothic
 
 Unofficial, noncommercial fan translation. Original work and trademarks

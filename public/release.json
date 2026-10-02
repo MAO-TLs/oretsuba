@@ -1,13 +1,13 @@
 {
-  "version": "1.2.5",
-  "zip_sha256": "d8ac58ab215fd81ec90c0fd99d7a41244139aa6e2b0e29c18ae0cfc816f752f0",
-  "zip_bytes": 12451193,
+  "version": "1.2.6",
+  "zip_sha256": "c022fc322a830573ed18b23230f38750ea1bc2a9b18bac410ef1a004bafc34ea",
+  "zip_bytes": 12462423,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "7e04578f0b06c2c29e19f3120dd8584c1651124d98306f0c49206d175a8be435",
-      "output_size": 22525833,
+      "output_sha256": "f1fb4e38f96f3b9973b01e4feead0d02db2108ace9fee6a966405a316c59a9ed",
+      "output_size": 22525837,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -30,7 +30,9 @@
         "3a350e55e15f0cf90ba9e6e5d471ddd2ddbb39885699027d0037e57b75f6d862",
         "4981af60bd748fd5f65bc71c2db44f1b827a6b0a79729c1b8b7f99811d6b2508",
         "ad6c53f28c3a2bb5abb63b08d35c13768c07d15d4b044cea483bbb5808ba36ca",
-        "85e451a374165bec604eaee0cd3d44b110a2ffcd9ee10aec6c34b06179bf65d3"
+        "85e451a374165bec604eaee0cd3d44b110a2ffcd9ee10aec6c34b06179bf65d3",
+        "7e04578f0b06c2c29e19f3120dd8584c1651124d98306f0c49206d175a8be435",
+        "2d21d6f2afb3e9444cfa7b53b2d5e78e78bdcfd8174df79ee2230d253ea221bf"
       ]
     },
     {
@@ -42,7 +44,7 @@
     {
       "name": "ORE_TUBA.EXE",
       "source_sha256": "b269980423e9c85281046e358804b0d66d86001084bae23f5ac75b30ae9d8a4b",
-      "output_sha256": "dd3d2bcc427bc9afec491ec0e16bd3ba85f43d33e042b20372094ebb545415f8",
+      "output_sha256": "c3372e0b3e7280c805730826373e6d8e04513d25206dc6a973066087ed9c9acc",
       "output_size": 1126400,
       "previous_output_sha256": [
         "3408139d76cbd2939878e4970bf0728410b619a997477b5c3864ab794c8e1eaa",
@@ -51,11 +53,12 @@
         "691b84b0fe7589fedfd6128c1c54114070f6c1f77a3f4f4d91a069f679484d55",
         "aade9b1646dd3a1f103983997530a795169faba2a677f8a409b04c9edcd8b221",
         "26f8acbb242162e8a64f2a7ad99ee82f06c4e89adeb4b00635eec13c60cebc0e",
-        "aaa4a577941843883756fda517a51b5c0d0a97ccc50b785ff024ef40ff67a2c1"
+        "aaa4a577941843883756fda517a51b5c0d0a97ccc50b785ff024ef40ff67a2c1",
+        "dd3d2bcc427bc9afec491ec0e16bd3ba85f43d33e042b20372094ebb545415f8"
       ]
     }
   ],
-  "font_sha256": "d122c7543f61af5c70464c0ea753d8add48589b9183c3ce45170255c37090d3b",
+  "font_sha256": "0274dcefebd108cc124c284663cf73a15d4be63a460b9ab5e11cc8742cc81c72",
   "font_english_metrics_match_tested_font": true,
   "editorial_corrections": 8723,
   "v120_unique_refs": 8722,
@@ -77,7 +80,7 @@
   "reported_display_text_corrections": 1,
   "engine_safety_corrections": 1,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "The reported symbolic outburst was replaced with faithful engine-safe text and passed source binding, CP932 encoding, exact archive reconstruction, and installer upgrade checks. In-game v1.2.5 verification, a full-game playthrough, and native Windows runtime testing remain pending.",
+  "runtime_scope": "User approved the font appearance. Encoding, spacing, wrapping, archive preservation, clean and repeat installation, and every published upgrade through v1.2.5 were verified. Separate agent in-game, full-game playthrough, and native Windows runtime verification were not performed.",
   "private_test": false,
   "display_fixes": [
     "Preserve live dialogue page when closing history",
@@ -88,6 +91,12 @@
     "Wrap scene-skip descriptions with real line feeds at English word boundaries",
     "Reserve additional right margin for enlarged dialogue",
     "Compress the reported table line to two safe rows",
-    "Fit all translated speaker labels within the 17-glyph nameplate"
-  ]
+    "Fit all translated speaker labels within the 17-glyph nameplate",
+    "Render marked emphasis with slanted copies of existing glyphs, preserving advances",
+    "Project literal ampersands as engine-safe fullwidth ampersands"
+  ],
+  "font_family": "MAO Gothic Q4I",
+  "inline_italics": true,
+  "italic_display_rows": 969,
+  "ampersand_display_rows": 4
 }
