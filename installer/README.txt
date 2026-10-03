@@ -1,3 +1,8 @@
+V1.2.7 DIALOGUE CORRECTIONS
+- Restores missing outer dialogue quotation marks.
+- Corrects one wordless reaction that had received unrelated dialogue.
+- Preserves the v1.2.6 font and engine fixes.
+
 V1.2.6 DISPLAY AND EMPHASIS FIXES
 - Renders marked emphasis in game using slanted versions of the same font.
 - Preserves normal text, character spacing, and dialogue wrapping.
@@ -39,7 +44,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.6
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.7
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.

@@ -1,13 +1,13 @@
 {
-  "version": "1.2.6",
-  "zip_sha256": "c022fc322a830573ed18b23230f38750ea1bc2a9b18bac410ef1a004bafc34ea",
-  "zip_bytes": 12462423,
+  "version": "1.2.7",
+  "zip_sha256": "ed1e484d2b914e90bf3dfb780e03afa51ae6a33bf68038a8187743913948461c",
+  "zip_bytes": 12462278,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "f1fb4e38f96f3b9973b01e4feead0d02db2108ace9fee6a966405a316c59a9ed",
-      "output_size": 22525837,
+      "output_sha256": "1e7dbd7415e38b2ba147cf382ce1ebe3613f84acbf35fdc8bf3e1bb618bbc483",
+      "output_size": 22528010,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -32,7 +32,8 @@
         "ad6c53f28c3a2bb5abb63b08d35c13768c07d15d4b044cea483bbb5808ba36ca",
         "85e451a374165bec604eaee0cd3d44b110a2ffcd9ee10aec6c34b06179bf65d3",
         "7e04578f0b06c2c29e19f3120dd8584c1651124d98306f0c49206d175a8be435",
-        "2d21d6f2afb3e9444cfa7b53b2d5e78e78bdcfd8174df79ee2230d253ea221bf"
+        "2d21d6f2afb3e9444cfa7b53b2d5e78e78bdcfd8174df79ee2230d253ea221bf",
+        "f1fb4e38f96f3b9973b01e4feead0d02db2108ace9fee6a966405a316c59a9ed"
       ]
     },
     {
@@ -80,7 +81,7 @@
   "reported_display_text_corrections": 1,
   "engine_safety_corrections": 1,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "User approved the font appearance. Encoding, spacing, wrapping, archive preservation, clean and repeat installation, and every published upgrade through v1.2.5 were verified. Separate agent in-game, full-game playthrough, and native Windows runtime verification were not performed.",
+  "runtime_scope": "Source binding, CP932 encoding, dialogue width, instruction preservation, pointer relocation, archive integrity, clean/repeat installation, and all published upgrades through v1.2.6 verified. No separate in-game playthrough or native Windows runtime test.",
   "private_test": false,
   "display_fixes": [
     "Preserve live dialogue page when closing history",
@@ -93,10 +94,15 @@
     "Compress the reported table line to two safe rows",
     "Fit all translated speaker labels within the 17-glyph nameplate",
     "Render marked emphasis with slanted copies of existing glyphs, preserving advances",
-    "Project literal ampersands as engine-safe fullwidth ampersands"
+    "Project literal ampersands as engine-safe fullwidth ampersands",
+    "Restore missing outer dialogue quotation marks"
   ],
   "font_family": "MAO Gothic Q4I",
   "inline_italics": true,
   "italic_display_rows": 969,
-  "ampersand_display_rows": 4
+  "ampersand_display_rows": 4,
+  "dialogue_quote_repairs": 980,
+  "hayato_section_quote_repairs": 304,
+  "wordless_reaction_repairs": 1,
+  "hotfix_modified_lines": 981
 }
