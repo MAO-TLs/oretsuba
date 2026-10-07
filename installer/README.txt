@@ -1,3 +1,8 @@
+V1.2.9 TEXT-CONTROL HOTFIX
+- Fixes a line that could stop advancing when brackets were interpreted as text controls.
+- Preserves literal username brackets using engine-safe glyphs.
+- Preserves the v1.2.8 font and engine fixes.
+
 V1.2.8 LANGUAGE REFINEMENTS
 - General wordplay edits.
 - Normalizes the Dora nickname and its repeated forms.
@@ -49,7 +54,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.8
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.9
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
