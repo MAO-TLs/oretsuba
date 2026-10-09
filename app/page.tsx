@@ -41,7 +41,7 @@ export default function Home() {
               and natural literary English.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.2.9/OreTsuba-English-v1.2.9.zip">
+              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.2.10/OreTsuba-English-v1.2.10.zip">
                 Download complete release
                 <span aria-hidden="true">↓</span>
               </a>
@@ -51,8 +51,8 @@ export default function Home() {
               </a>
             </div>
             <p className="compatibility">
-              12.5 MB · <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.2.9">Release notes</a>
-              {" "}· Version v1.2.9 · Japanese retail v1.00 required
+              12.5 MB · <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.2.10">Release notes</a>
+              {" "}· Version v1.2.10 · Japanese retail v1.00 required
             </p>
           </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
         <div className="shell release-grid">
           <div>
             <span className="release-label">Version</span>
-            <strong>v1.2.9</strong>
+            <strong>v1.2.10</strong>
           </div>
           <div>
             <span className="release-label">Script coverage</span>

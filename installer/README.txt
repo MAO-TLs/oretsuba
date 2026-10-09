@@ -1,3 +1,9 @@
+V1.2.10 NAME CONSISTENCY
+- Standardizes ordinary references to Kuroudo.
+- Uses Western given-name-first order for full names.
+- Retains the distinct full stage name Claude Haryuu.
+- Preserves the v1.2.9 font and engine fixes.
+
 V1.2.9 TEXT-CONTROL HOTFIX
 - Fixes a line that could stop advancing when brackets were interpreted as text controls.
 - Preserves literal username brackets using engine-safe glyphs.
@@ -54,7 +60,7 @@ V1.2.0 REGISTER AND RECURRENCE REVISION
 - Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
   window title, and save paths.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.9
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.10
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
