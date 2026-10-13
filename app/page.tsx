@@ -52,7 +52,7 @@ export default function Home() {
             </div>
             <p className="compatibility">
               12.5 MB · <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.2.10">Release notes</a>
-              {" "}· Version v1.2.10 · Japanese retail v1.00 required
+              {" "}· Patch version v1.2.10 · Japanese retail v1.00 required · <a href="#install">Installation instructions</a>
             </p>
           </div>
 

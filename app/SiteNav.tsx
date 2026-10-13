@@ -27,7 +27,7 @@ export function SiteNav({
         >
           Script
         </a>
-        <a href="https://github.com/MAO-TLs">GitHub</a>
+        <a href="https://github.com/MAO-TLs/oretsuba">GitHub</a>
       </div>
     </nav>
   );
