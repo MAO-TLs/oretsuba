@@ -1,13 +1,13 @@
 {
-  "version": "1.2.10",
-  "zip_sha256": "58d22cd4e4e981b35347a67647ba7978f98f935d8d70ee514c5dbcd62eb37e5d",
-  "zip_bytes": 12462513,
+  "version": "1.2.11",
+  "zip_sha256": "c8ca1ccbc06f0e2a3e6649d52e26da244b694461f47ff0b9202f728bb2937a78",
+  "zip_bytes": 12461422,
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "373d8ac348e7d998a01363206d689d8739360eccd8a5e2c880cd7febe9e01521",
-      "output_size": 22527854,
+      "output_sha256": "7d721581db3dbe907332417944912786564b702532b72b62c77c9461c8672aa1",
+      "output_size": 22527837,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
         "f7a8cac46bf079b47e4d814415a5eff9c1b9dd6418cd2500404a3b13c2dbb338",
@@ -37,7 +37,8 @@
         "1e7dbd7415e38b2ba147cf382ce1ebe3613f84acbf35fdc8bf3e1bb618bbc483",
         "3bd7d848fa7233dac2936831e616e9fac9f86c1247a97d9c534d20c0b81f5d6c",
         "31d2b4b2e6c576dca13de72ef17ab308a8490f3e97c2ab30282c1f27fd38bb4c",
-        "2e6a607842cbe4bfe80da3aa99b1d857bf101b7a50166fb2d86eeeacee83ab3d"
+        "2e6a607842cbe4bfe80da3aa99b1d857bf101b7a50166fb2d86eeeacee83ab3d",
+        "373d8ac348e7d998a01363206d689d8739360eccd8a5e2c880cd7febe9e01521"
       ]
     },
     {
@@ -85,7 +86,7 @@
   "reported_display_text_corrections": 1,
   "engine_safety_corrections": 1,
   "apostrophe_projection": "Typographic single quotes map to the narrow ASCII apostrophe in engine text.",
-  "runtime_scope": "Source binding, CP932 encoding, dialogue width, instruction preservation, pointer relocation, archive integrity, clean/repeat installation, and all published upgrades through v1.2.9 verified. No separate in-game playthrough or native Windows runtime test.",
+  "runtime_scope": "Source binding, CP932 encoding, dialogue width, instruction preservation, pointer relocation, archive integrity, clean/repeat installation, and all published upgrades through v1.2.10 verified. No separate in-game playthrough or native Windows runtime test.",
   "private_test": false,
   "display_fixes": [
     "Preserve live dialogue page when closing history",
@@ -104,19 +105,20 @@
   ],
   "font_family": "MAO Gothic Q4I",
   "inline_italics": true,
-  "italic_display_rows": 969,
+  "italic_display_rows": 970,
   "ampersand_display_rows": 4,
   "dialogue_quote_repairs": 980,
   "hayato_section_quote_repairs": 304,
   "wordless_reaction_repairs": 1,
-  "hotfix_modified_lines": 131,
+  "hotfix_modified_lines": 26,
   "dora_normalization_records": 309,
   "general_wordplay_modified_lines": 23,
   "general_wordplay_revised_groups": 16,
   "language_refinements": [
     "General wordplay edits",
     "Dora nickname normalization",
-    "Name consistency and Western full-name order"
+    "Name consistency and Western full-name order",
+    "General wordplay and dialogue consistency edits"
   ],
   "literal_bracket_projection_rows": 1,
   "numeric_size_control_rows_preserved": 12,
@@ -127,5 +129,8 @@
     "stage_name": "Claude Haryuu",
     "modified_lines": 131,
     "full_name_order": "given name followed by family name"
-  }
+  },
+  "callback_consistency_modified_lines": 26,
+  "callback_audit_reader_lines": 57797,
+  "callback_audit_candidates_screened": 2143
 }

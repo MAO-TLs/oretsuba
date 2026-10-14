@@ -1,66 +1,8 @@
-V1.2.10 NAME CONSISTENCY
-- Standardizes ordinary references to Kuroudo.
-- Uses Western given-name-first order for full names.
-- Retains the distinct full stage name Claude Haryuu.
-- Preserves the v1.2.9 font and engine fixes.
+V1.2.11 DIALOGUE CONSISTENCY
+- General wordplay and dialogue consistency edits across 26 lines.
+- Preserves previous translation, font, display, and engine fixes.
 
-V1.2.9 TEXT-CONTROL HOTFIX
-- Fixes a line that could stop advancing when brackets were interpreted as text controls.
-- Preserves literal username brackets using engine-safe glyphs.
-- Preserves the v1.2.8 font and engine fixes.
-
-V1.2.8 LANGUAGE REFINEMENTS
-- General wordplay edits.
-- Normalizes the Dora nickname and its repeated forms.
-- Preserves the v1.2.7 font and engine fixes.
-
-V1.2.7 DIALOGUE CORRECTIONS
-- Restores missing outer dialogue quotation marks.
-- Corrects one wordless reaction that had received unrelated dialogue.
-- Preserves the v1.2.6 font and engine fixes.
-
-V1.2.6 DISPLAY AND EMPHASIS FIXES
-- Renders marked emphasis in game using slanted versions of the same font.
-- Preserves normal text, character spacing, and dialogue wrapping.
-- Fixes literal ampersands cutting off dialogue.
-
-V1.2.5 CRASH HOTFIX
-- Replaces one symbolic outburst with a faithful plain-text yell so the engine
-  no longer receives a raw percent/control-like symbol sequence.
-
-V1.2.4 SPEAKER NAMEPLATE FIT
-- Shortens 79 overlong descriptive speaker labels across 229 occurrences.
-- Keeps proper character names in full explicit-vowel Hepburn.
-- Enforces a 17-glyph maximum for every translated speaker label.
-
-V1.2.3 NAME, LANGUAGE, AND SCENE-SUMMARY FIXES
-- Normalizes Japanese names to consistent ASCII Hepburn forms with explicit
-  long vowels, while preserving the Hariu/Haryuu identity distinction.
-- Uses American English spellings and ordinary American vocabulary throughout.
-- Replaces visible scene-summary backslashes with real line feeds and wraps
-  descriptions only between complete words.
-- Corrects the installer version displayed after installation.
-
-V1.2.1 WORDPLAY EQUIVALENCE REVISION
-- Revises 264 source-bound lines so Japanese puns, homophones, verbal
-  mistakes, altered idioms, and comic speech use equivalent English devices.
-- Recasts Japanese-only pronoun, address-form, and demonstrative cues as
-  visible English cues instead of explaining grammar the reader cannot see.
-- Localizes stray honorific and fandom jargon into ordinary English.
-- Aligns localized jokes across routes and repeated passages.
-- Preserves plot meaning and avoids strengthening implications beyond the
-  Japanese source.
-
-V1.2.0 REGISTER AND RECURRENCE REVISION
-- Revises thousands of lines so casual, rough, formal, comic, and lyrical
-  Japanese registers carry the same force in natural English.
-- Aligns substantive exact recurrences across routes and speaker labels.
-- Retains short contextual variants where Japanese omits the subject,
-  predicate, referent, or performance detail needed by English.
-- Keeps the v1.1.6 font, 65-character wrapping, backlog fixes, romanized
-  window title, and save paths.
-
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.10
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.11
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.

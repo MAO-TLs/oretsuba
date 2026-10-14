@@ -24,7 +24,7 @@ test('release metadata links to the existing installation section', () => {
 
 test('reader version is bound to the published script data, not a stale literal', () => {
   const stats = JSON.parse(read('public/script-data/summary.json'));
-  assert.equal(stats.version, 'v1.2.10');
+  assert.equal(stats.version, 'v1.2.11');
   assert.ok(!read('app/script/page.tsx').includes('v1.2.0'));
   assert.ok(read('app/script/ScriptBrowser.tsx').includes('Script version {index?.version'));
   assert.ok(!read('app/script/ScriptBrowser.tsx').includes('English script · v1.2.0'));
