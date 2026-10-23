@@ -1,5 +1,7 @@
 "use client";
 
+import { matchesReaderText } from "./reader-search.mjs";
+
 import {
   useDeferredValue,
   useEffect,
@@ -420,14 +422,6 @@ function normalizeSearchText(value: string) {
   return value.normalize("NFKC").toLocaleLowerCase().replace(/\s+/g, " ");
 }
 
-function compactSearchText(value: string) {
-  return value.replace(/\s+/g, "");
-}
-
-function isJapaneseSearchText(value: string) {
-  return /[\u3040-\u30ff\u3400-\u9fff\uff66-\uff9f]/u.test(value);
-}
-
 const routeFallbacks: RouteSummary[] = [
   {
     id: "intro",
@@ -590,9 +584,6 @@ export function ScriptBrowser() {
   const normalizedCorpusQuery = normalizeSearchText(
     deferredCorpusQuery.trim(),
   );
-  const compactCorpusQuery = isJapaneseSearchText(normalizedCorpusQuery)
-    ? compactSearchText(normalizedCorpusQuery)
-    : "";
 
   const activePayload =
     payload?.route === selectedRoute?.id && payload.scriptId === scriptId
@@ -1007,9 +998,6 @@ export function ScriptBrowser() {
   const visibleLines = useMemo(() => {
     const lines = activePayload?.lines ?? [];
     const needle = normalizeSearchText(scriptQuery.trim());
-    const compactNeedle = isJapaneseSearchText(needle)
-      ? compactSearchText(needle)
-      : "";
     if (!needle) return lines;
     return lines.filter((line) =>
       [
@@ -1023,9 +1011,7 @@ export function ScriptBrowser() {
       ].some((value) => {
         const normalized = normalizeSearchText(value);
         return (
-          normalized.includes(needle) ||
-          (compactNeedle !== "" &&
-            compactSearchText(normalized).includes(compactNeedle))
+          matchesReaderText(normalized, needle)
         );
       }),
     );
@@ -1104,11 +1090,7 @@ export function ScriptBrowser() {
             ),
           );
           let matchesQuery =
-            primaryHaystack.includes(normalizedCorpusQuery) ||
-            (compactCorpusQuery !== "" &&
-              compactSearchText(primaryHaystack).includes(
-                compactCorpusQuery,
-              ));
+            matchesReaderText(primaryHaystack, normalizedCorpusQuery);
           const comparisonRow = showTodokanai
             ? todokanaiConcordance?.routes[routeIndex]?.scripts[
                 scriptIndex
@@ -1118,11 +1100,7 @@ export function ScriptBrowser() {
           if (!matchesQuery && comparisonRow) {
             const comparisonHaystack = normalizeSearchText(comparisonRow[1]);
             matchesQuery =
-              comparisonHaystack.includes(normalizedCorpusQuery) ||
-              (compactCorpusQuery !== "" &&
-                compactSearchText(comparisonHaystack).includes(
-                  compactCorpusQuery,
-                ));
+              matchesReaderText(comparisonHaystack, normalizedCorpusQuery);
           }
 
           if (matchesQuery) {
@@ -1139,7 +1117,6 @@ export function ScriptBrowser() {
     });
     return matches;
   }, [
-    compactCorpusQuery,
     concordance,
     corpusComparisonReady,
     normalizedCorpusQuery,
