@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           <div>
             <span className="release-label">Script coverage</span>
-            <strong>Three games</strong>
+            <strong>Main game + <em>Prelude</em> + <em>AfterStory</em></strong>
           </div>
           <div>
             <span className="release-label">Lines</span>
