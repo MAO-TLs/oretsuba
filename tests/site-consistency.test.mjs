@@ -19,7 +19,7 @@ test('release metadata links to the existing installation section', () => {
   const home = read("app/page.tsx");
   assert.ok(home.includes('href="#install">Installation instructions</a>'));
   assert.ok(home.includes('id="install"'));
-  assert.ok(home.includes('Patch version'));
+  assert.ok(home.includes('Release v1.3.0'));
 });
 
 test('reader version is bound to the published script data, not a stale literal', () => {

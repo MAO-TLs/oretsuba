@@ -2,7 +2,6 @@ import { InstallAnchorRelease } from "./InstallAnchorRelease";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
 import index from "../public/script-data/index.json";
-import release from "../public/release.json";
 
 export const dynamic = "force-static";
 
@@ -45,7 +44,7 @@ export default function Home() {
               Now including <em>Prelude</em> and <em>AfterStory</em>.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#downloads">
+              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.0">
                 Download patches
                 <span aria-hidden="true">↓</span>
               </a>
@@ -83,25 +82,6 @@ export default function Home() {
             <strong className="release-status">Released</strong>
           </div>
         </div>
-      </section>
-
-      <section className="section shell" id="downloads">
-        <div className="section-heading">
-          <p className="eyebrow">Downloads</p>
-          <h2>Choose your game</h2>
-          <p>Each patch requires its corresponding Japanese retail game. Install the patches in separate game folders.</p>
-        </div>
-        <div className="chapter-grid">
-          <a className="chapter-card" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.3.0/OreTsuba-English-v1.2.11.zip">
-            <span className="chapter-number" aria-hidden="true">↓</span>
-            <div><h3>Oretachi ni Tsubasa wa Nai</h3><p>Patch version v1.2.11 · Japanese retail v1.00</p></div>
-          </a>
-          {release.editions.map(edition => <a className="chapter-card" href={edition.url} key={edition.id}>
-            <span className="chapter-number" aria-hidden="true">↓</span>
-            <div><h3>{edition.title}</h3><p>Patch version v{edition.version} · {(edition.zip_bytes / 1_000_000).toFixed(1)} MB</p></div>
-          </a>)}
-        </div>
-        <a className="text-link" href="./SHA256SUMS.txt">Download checksums</a>
       </section>
 
       <section className="section shell">

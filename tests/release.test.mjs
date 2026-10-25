@@ -2,11 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
-test('public release retains the existing design and links its versioned patch',()=>{
+test('public release retains the existing design and links its release',()=>{
  const home=read('dist/client/index.html');
  const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/download\/v1.3.0\/OreTsuba-English-v1.2.11.zip/);
+ assert.match(home,/releases\/tag\/v1.3.0/);
  assert.equal(release.version,'1.3.0');
  assert.equal(release.v120_unique_refs,8722);
  assert.equal(release.hepburn_name_dialogue_rows,1044);
