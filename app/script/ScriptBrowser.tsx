@@ -1436,7 +1436,7 @@ export function ScriptBrowser() {
           ) : null}
           <div className="script-meta">
             <h2>
-              {activePayload.routeLabel} · {activePayload.scriptId}
+              {["Prelude", "AfterStory"].includes(activePayload.routeLabel) ? <em>{activePayload.routeLabel}</em> : activePayload.routeLabel} · {activePayload.scriptId}
             </h2>
             <p>{activePayload.lineCount.toLocaleString()} source lines</p>
           </div>
@@ -1639,7 +1639,7 @@ export function ScriptBrowser() {
                         setCorpusLimit(CORPUS_BATCH_SIZE);
                       }}
                     >
-                      {route.label}
+                      {["Prelude", "AfterStory"].includes(route.label) ? <em>{route.label}</em> : route.label}
                       <span>{count.toLocaleString()}</span>
                     </button>
                   );
@@ -1703,7 +1703,7 @@ export function ScriptBrowser() {
                             href={resultHref}
                           >
                             <span>
-                              {line.routeLabel} · Script {line.scriptId} ·
+                              {["Prelude", "AfterStory"].includes(line.routeLabel) ? <em>{line.routeLabel}</em> : line.routeLabel} · Script {line.scriptId} ·
                               Line {lineNumber.toLocaleString()}
                             </span>
                             <code>{ref}</code>

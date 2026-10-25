@@ -12,3 +12,5 @@ footer { background: #1f0a18; }
 @media(max-width:900px) { .hero::after { background: linear-gradient(90deg,rgba(26,7,20,.95) 0%,rgba(35,8,26,.84) 58%,rgba(24,5,18,.36) 100%); } }
 /* Five content sections, retaining WA2's tablet and phone breakpoints. */
 @media(min-width:901px) { .chapter-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } .chapter-card { min-width: 0; padding: 24px 16px; gap: 12px; } }
+
+@media (min-width: 901px) { .chapter-grid.game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }

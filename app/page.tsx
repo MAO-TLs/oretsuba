@@ -6,6 +6,11 @@ import index from "../public/script-data/index.json";
 export const dynamic = "force-static";
 
 export default function Home() {
+  const mainRoutes = index.routes.filter(route => !["prelude", "afterstory"].includes(route.id));
+  const games = [
+    { ...mainRoutes[0], label: "Main game", lineCount: mainRoutes.reduce((sum, route) => sum + route.lineCount, 0), scriptCount: mainRoutes.reduce((sum, route) => sum + route.scripts.length, 0) },
+    ...index.routes.filter(route => ["prelude", "afterstory"].includes(route.id)).map(route => ({ ...route, scriptCount: route.scripts.length })),
+  ];
   return (
     <main>
       <InstallAnchorRelease />
@@ -89,13 +94,13 @@ export default function Home() {
           <p className="eyebrow">Read online</p>
           <h2>Browse the complete script</h2>
           <p>
-            The main game, Prelude, and AfterStory are browsable beside their
+            The main game, <em>Prelude</em>, and <em>AfterStory</em> are browsable beside their
             Japanese source. Search the current scene or the complete corpus,
             then jump directly to any reference.
           </p>
         </div>
-        <div className="chapter-grid">
-          {index.routes.filter(route => route.id !== "section-00").map((route, i) => (
+        <div className="chapter-grid game-grid">
+          {games.map((route, i) => (
             <a
               className="chapter-card"
               href={`./script/?route=${route.id}&script=${route.scripts[0].id}`}
@@ -103,8 +108,8 @@ export default function Home() {
             >
               <span className="chapter-number">{String(i + 1).padStart(2, "0")}</span>
               <div>
-                <h3>{route.label}</h3>
-                <p>{route.lineCount.toLocaleString()} lines · {route.scripts.length} scripts</p>
+                <h3>{route.id === "prologue" ? route.label : <em>{route.label}</em>}</h3>
+                <p>{route.lineCount.toLocaleString()} lines · {route.scriptCount} scripts</p>
               </div>
             </a>
           ))}
@@ -146,13 +151,13 @@ export default function Home() {
               <span>03</span>
               <div>
                 <h3>Start the game</h3>
-                <p>Launch ORE_TUBA.EXE for the main game, OT_PREDE.EXE for Prelude, or OT_AFTER.EXE for AfterStory. On macOS, use the included Python installer with your Wine installation; see README.txt in the download for the command. Restart your Wine wrapper after installation.</p>
+                <p>Launch ORE_TUBA.EXE for the main game, OT_PREDE.EXE for <em>Prelude</em>, or OT_AFTER.EXE for <em>AfterStory</em>. On macOS, use the included Python installer with your Wine installation; see README.txt in the download for the command. Restart your Wine wrapper after installation.</p>
               </div>
             </li>
           </ol>
           <aside className="install-warning">
             <strong>Platform validation</strong>
-            <p>The main-game opening and prologue were visually checked on macOS with Sikarugir/Wine. Prelude and AfterStory have passed archive and installer checks; a full visual playthrough and native Windows testing remain unperformed.</p>
+            <p>The main-game opening and prologue were visually checked on macOS with Sikarugir/Wine. <em>Prelude</em> and <em>AfterStory</em> have passed archive and installer checks; a full visual playthrough and native Windows testing remain unperformed.</p>
           </aside>
         </div>
       </section>
