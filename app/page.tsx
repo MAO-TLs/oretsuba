@@ -2,6 +2,7 @@ import { InstallAnchorRelease } from "./InstallAnchorRelease";
 import { SiteNav } from "./SiteNav";
 import { SiteFooter } from "./SiteFooter";
 import index from "../public/script-data/index.json";
+import release from "../public/release.json";
 
 export const dynamic = "force-static";
 
@@ -35,14 +36,13 @@ export default function Home() {
               NAI
             </h1>
             <p className="dek">
-              Navel’s magnum opus <em>Oretachi ni Tsubasa wa Nai</em> is now
-              available for the first time in English. A complete translation
-              from the Japanese, with attention to accuracy, character voice,
-              and natural literary English.
+              English translations of <em>Oretachi ni Tsubasa wa Nai</em>,
+              Prelude, and AfterStory, with attention to the Japanese,
+              character voice, and natural literary English.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.2.11/OreTsuba-English-v1.2.11.zip">
-                Download complete release
+              <a className="button button-primary" href="#downloads">
+                Download patches
                 <span aria-hidden="true">↓</span>
               </a>
               <a className="button button-secondary" href="./script/">
@@ -51,8 +51,8 @@ export default function Home() {
               </a>
             </div>
             <p className="compatibility">
-              12.5 MB · <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.2.11">Release notes</a>
-              {" "}· Patch version v1.2.11 · Japanese retail v1.00 required · <a href="#install">Installation instructions</a>
+              <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.0">Release v1.3.0</a>
+              {" "}· Japanese retail games required · <a href="#install">Installation instructions</a>
             </p>
           </div>
 
@@ -64,11 +64,11 @@ export default function Home() {
         <div className="shell release-grid">
           <div>
             <span className="release-label">Version</span>
-            <strong>v1.2.11</strong>
+            <strong>v1.3.0</strong>
           </div>
           <div>
             <span className="release-label">Script coverage</span>
-            <strong>Main game</strong>
+            <strong>Three games</strong>
           </div>
           <div>
             <span className="release-label">Lines</span>
@@ -81,12 +81,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section shell" id="downloads">
+        <div className="section-heading">
+          <p className="eyebrow">Downloads</p>
+          <h2>Choose your game</h2>
+          <p>Each patch requires its corresponding Japanese retail game. Install the patches in separate game folders.</p>
+        </div>
+        <div className="chapter-grid">
+          <a className="chapter-card" href="https://github.com/MAO-TLs/oretsuba/releases/download/v1.3.0/OreTsuba-English-v1.2.11.zip">
+            <span className="chapter-number" aria-hidden="true">↓</span>
+            <div><h3>Oretachi ni Tsubasa wa Nai</h3><p>Patch version v1.2.11 · Japanese retail v1.00</p></div>
+          </a>
+          {release.editions.map(edition => <a className="chapter-card" href={edition.url} key={edition.id}>
+            <span className="chapter-number" aria-hidden="true">↓</span>
+            <div><h3>{edition.title}</h3><p>Patch version v{edition.version} · {(edition.zip_bytes / 1_000_000).toFixed(1)} MB</p></div>
+          </a>)}
+        </div>
+        <a className="text-link" href="./SHA256SUMS.txt">Download checksums</a>
+      </section>
+
       <section className="section shell">
         <div className="section-heading">
           <p className="eyebrow">Read online</p>
           <h2>Browse the complete script</h2>
           <p>
-            Every main-game line is browsable beside its
+            The main game, Prelude, and AfterStory are browsable beside their
             Japanese source. Search the current scene or the complete corpus,
             then jump directly to any reference.
           </p>
@@ -119,8 +138,8 @@ export default function Home() {
               <h2>How to install the patch</h2>
             </div>
             <p className="install-requirement">
-              Requires a legally obtained Japanese <em>Oretachi ni Tsubasa wa Nai</em>
-              {" "}retail v1.00 installation. The installer checks that your original files match before applying the patch.
+              Requires a legally obtained Japanese retail installation of the selected game.
+              The main-game patch supports retail v1.00. Each installer checks that your original files match before applying its patch.
             </p>
           </div>
 
@@ -136,20 +155,20 @@ export default function Home() {
               <span>02</span>
               <div>
                 <h3>Apply the English patch</h3>
-                <p>Extract the ZIP, run “Install English Patch.cmd,” and select the Japanese game folder. The installer includes the required font and keeps a backup of the original files.</p>
+                <p>Extract the ZIP, run the included “Install … English Patch.cmd” file, and select the matching Japanese game folder. The installer includes the required font and keeps a backup of the original files.</p>
               </div>
             </li>
             <li>
               <span>03</span>
               <div>
                 <h3>Start the game</h3>
-                <p>Launch ORE_TUBA.EXE. On macOS, use the included Python installer with your Wine installation; see README.txt in the download for the command. Restart your Wine wrapper after installation.</p>
+                <p>Launch ORE_TUBA.EXE for the main game, OT_PREDE.EXE for Prelude, or OT_AFTER.EXE for AfterStory. On macOS, use the included Python installer with your Wine installation; see README.txt in the download for the command. Restart your Wine wrapper after installation.</p>
               </div>
             </li>
           </ol>
           <aside className="install-warning">
             <strong>Platform validation</strong>
-            <p>The opening and prologue were visually checked on macOS with Sikarugir/Wine. Full-game playthrough and native Windows testing are not complete.</p>
+            <p>The main-game opening and prologue were visually checked on macOS with Sikarugir/Wine. Prelude and AfterStory have passed archive and installer checks; a full visual playthrough and native Windows testing remain unperformed.</p>
           </aside>
         </div>
       </section>

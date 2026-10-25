@@ -12,7 +12,9 @@ test('reported Dora search excludes adorable and agrees in script and corpus sco
     for (const row of payload.lines) if ([row.ref,row.speakerJa,row.speakerEn,row.japanese,row.audioJapanese??'',row.english].some(x=>matchesReaderText(x,'dora'))) scriptRefs.push(row.ref);
   }
   assert.deepEqual(scriptRefs.sort(),corpusRefs.sort());
-  assert.equal(corpusRefs.length,307);
+  assert.equal(corpusRefs.filter(ref=>!ref.startsWith('oretsuba:prelude:')&&!ref.startsWith('oretsuba:afterstory:')).length,307);
+  assert.ok(corpusRefs.some(ref=>ref.startsWith('oretsuba:prelude:')));
+  assert.ok(corpusRefs.some(ref=>ref.startsWith('oretsuba:afterstory:')));
   for (const ref of ['oretsuba:section-02:s02_02a:0001b5a8','oretsuba:section-02:s02_02a:0001b4a7']) assert.ok(!corpusRefs.includes(ref));
   const source=readFileSync(new URL('../app/script/ScriptBrowser.tsx',import.meta.url),'utf8');
   assert.match(source,/matchesReaderText\(normalized, needle\)/);

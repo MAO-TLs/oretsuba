@@ -6,8 +6,8 @@ test('public release retains the existing design and links its versioned patch',
  const home=read('dist/client/index.html');
  const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/download\/v1.2.11\/OreTsuba-English-v1.2.11.zip/);
- assert.equal(release.version,'1.2.11');
+ assert.match(home,/releases\/download\/v1.3.0\/OreTsuba-English-v1.2.11.zip/);
+ assert.equal(release.version,'1.3.0');
  assert.equal(release.v120_unique_refs,8722);
  assert.equal(release.hepburn_name_dialogue_rows,1044);
  assert.equal(release.american_english_dialogue_rows,75);
@@ -21,17 +21,17 @@ test('public release retains the existing design and links its versioned patch',
  assert.equal(release.speaker_label_fit_forms,79);
  assert.equal(release.speaker_label_fit_records,229);
  assert.equal(release.speaker_nameplate_glyph_limit,17);
- assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.11\\.zip\\n$'));
+ assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.11\\.zip\\n'));
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
  assert.doesNotMatch(home,/"\/assets\//);
- assert.match(read('dist/client/script/index.html'),/57,797/);
+ assert.match(read('dist/client/script/index.html'),/84,760/);
 });
-test('all 389 scripts and all 57797 bilingual entries are coherent',()=>{
+test('all 614 scripts and all 84760 bilingual entries are coherent',()=>{
  const index=JSON.parse(read('public/script-data/index.json'));
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
- assert.equal(index.version,'v1.2.11');assert.equal(corpus.version,'v1.2.11');
- assert.equal(index.totalLines,57797);assert.equal(corpus.totalLines,57797);
+ assert.equal(index.version,'v1.3.0');assert.equal(corpus.version,'v1.3.0');
+ assert.equal(index.totalLines,84760);assert.equal(corpus.totalLines,84760);
  assert.ok(!index.routes.some(r=>r.id==='section-03c'));
  const merged=index.routes.find(r=>r.id==='section-03');assert.equal(merged.lineCount,20062);assert.equal(merged.scripts.length,116);
  let count=0,scripts=0;const refs=new Set();
@@ -45,7 +45,7 @@ test('all 389 scripts and all 57797 bilingual entries are coherent',()=>{
    assert.ok(line.ref.startsWith('oretsuba:'+route.id+':'+script.id+':'));
   }count+=payload.lines.length;
  }
- assert.equal(count,57797);assert.equal(scripts,389);
+ assert.equal(count,84760);assert.equal(scripts,614);
 });
 test('v1.2.11 reader carries the reported display-safe dialogue revision',()=>{
  const script=JSON.parse(read('public/script-data/s02_03f.json'));

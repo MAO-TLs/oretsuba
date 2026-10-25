@@ -1,6 +1,7 @@
 "use client";
 
 import { matchesReaderText } from "./reader-search.mjs";
+import summary from "../../public/script-data/summary.json";
 
 import {
   useDeferredValue,
@@ -422,37 +423,12 @@ function normalizeSearchText(value: string) {
   return value.normalize("NFKC").toLocaleLowerCase().replace(/\s+/g, " ");
 }
 
-const routeFallbacks: RouteSummary[] = [
-  {
-    id: "intro",
-    label: "Introductory Chapter",
-    lineCount: 10769,
-    scripts: [],
-  },
-  {
-    id: "closing",
-    label: "Closing Chapter",
-    lineCount: 35275,
-    scripts: [],
-  },
-  {
-    id: "coda",
-    label: "Coda",
-    lineCount: 25152,
-    scripts: [],
-  },
-  {
-    id: "special",
-    label: "Special Contents",
-    lineCount: 6002,
-    scripts: [],
-  },
-];
+const routeFallbacks: RouteSummary[] = [];
 
 export function ScriptBrowser() {
   const [index, setIndex] = useState<ScriptIndex | null>(null);
-  const [routeId, setRouteId] = useState("intro");
-  const [scriptId, setScriptId] = useState("1001");
+  const [routeId, setRouteId] = useState("prologue");
+  const [scriptId, setScriptId] = useState("s00_00");
   const [payload, setPayload] = useState<ScriptPayload | null>(null);
   const [searchScope, setSearchScope] = useState<SearchScope>("script");
   const [scriptQuery, setScriptQuery] = useState("");
@@ -494,8 +470,8 @@ export function ScriptBrowser() {
         setIndex(data);
         const firstRoute = data.routes[0];
         const firstScript = firstRoute?.scripts[0];
-        let nextRouteId = firstRoute?.id ?? "intro";
-        let nextScriptId = firstScript?.id ?? "1001";
+        let nextRouteId = firstRoute?.id ?? "prologue";
+        let nextScriptId = firstScript?.id ?? "s00_00";
 
         const url = new URL(window.location.href);
         const comparisonEnabled =
@@ -513,7 +489,7 @@ export function ScriptBrowser() {
         );
         const requestedScript = requestedRoute?.scripts.find(
           (script) => script.id === requestedScriptId,
-        );
+        ) ?? requestedRoute?.scripts[0];
         if (requestedRoute && requestedScript) {
           nextRouteId = requestedRoute.id;
           nextScriptId = requestedScript.id;
@@ -555,9 +531,9 @@ export function ScriptBrowser() {
   }, []);
 
   const routes = index?.routes ?? routeFallbacks;
-  const totalLineLabel = index?.totalLines.toLocaleString() ?? "77,198";
+  const totalLineLabel = (index?.totalLines ?? summary.totalLines).toLocaleString();
   const totalScriptCount =
-    index?.routes.reduce((sum, route) => sum + route.scripts.length, 0) ?? 254;
+    index?.routes.reduce((sum, route) => sum + route.scripts.length, 0) ?? summary.totalScripts;
   const selectedRoute =
     routes.find((route) => route.id === routeId) ?? routes[0];
   const selectedScript = selectedRoute?.scripts.find(
@@ -586,16 +562,16 @@ export function ScriptBrowser() {
   );
 
   const activePayload =
-    payload?.route === selectedRoute?.id && payload.scriptId === scriptId
+    payload && payload.route === selectedRoute?.id && payload.scriptId === scriptId
       ? payload
       : null;
   const activeTodokanaiPayload =
-    todokanaiPayload?.route === selectedRoute?.id &&
+    todokanaiPayload && todokanaiPayload.route === selectedRoute?.id &&
     todokanaiPayload.scriptId === scriptId
       ? todokanaiPayload
       : null;
   const activeTodokanaiErrorPayload =
-    todokanaiErrorPayload?.route === selectedRoute?.id &&
+    todokanaiErrorPayload && todokanaiErrorPayload.route === selectedRoute?.id &&
     todokanaiErrorPayload.scriptId === scriptId
       ? todokanaiErrorPayload
       : null;
@@ -1263,7 +1239,7 @@ export function ScriptBrowser() {
     <section className="reader-shell shell compact">
       <div className="reader-controls" id="reader-controls">
         <div className="control">
-          <label htmlFor="chapter">Chapter</label>
+          <label htmlFor="chapter">Section</label>
           <select id="chapter" value={routeId} disabled={searchScope === "corpus"} onChange={(event) => {
             const route = routes.find(route => route.id === event.target.value);
             if (route?.scripts[0]) selectScriptLocation(route.id, route.scripts[0].id);
