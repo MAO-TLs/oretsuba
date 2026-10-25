@@ -43,10 +43,7 @@ export default function Home() {
               Navel’s magnum opus <em>Oretachi ni Tsubasa wa Nai</em> is now
               available for the first time in English. A complete translation
               from the Japanese, with attention to accuracy, character voice,
-              and natural literary English.
-            </p>
-            <p className="dek">
-              Now including <em>Prelude</em> and <em>AfterStory</em>.
+              and natural literary English. Now including <em>Prelude</em> and <em>AfterStory</em>.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.0">
