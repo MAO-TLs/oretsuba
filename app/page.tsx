@@ -36,9 +36,13 @@ export default function Home() {
               NAI
             </h1>
             <p className="dek">
-              English translations of <em>Oretachi ni Tsubasa wa Nai</em>,
-              Prelude, and AfterStory, with attention to the Japanese,
-              character voice, and natural literary English.
+              Navel’s magnum opus <em>Oretachi ni Tsubasa wa Nai</em> is now
+              available for the first time in English. A complete translation
+              from the Japanese, with attention to accuracy, character voice,
+              and natural literary English.
+            </p>
+            <p className="dek">
+              Now including <em>Prelude</em> and <em>AfterStory</em>.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#downloads">
