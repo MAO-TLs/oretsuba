@@ -33,15 +33,18 @@ test('each family installer matches its release, font, payload and download chec
     const prefix = 'installer/'+edition.id+'/';
     const patch = json(prefix+'patch.json');
     assert.equal(patch.version, edition.version);
-    assert.equal(patch.version, '1.0.1');
+    assert.equal(patch.version, '1.0.2');
     assert.equal(sha(read(prefix+'patch.dat')),patch.payload_sha256);
     assert.equal(sha(read(prefix+'mao-font.ttf')),release.font_sha256);
     assert.equal(patch.font_family,'MAO Gothic Q4I');
+    for (const runtime of patch.runtime_files) {
+      assert.equal(sha(read(prefix+runtime.name)), runtime.sha256);
+    }
     assert.deepEqual(patch.files.map(f=>f.output_sha256),edition.files.map(f=>f.output_sha256));
     for (const file of ['install.py',`Install ${edition.title} English Patch.ps1`,'README.txt']) {
       assert.doesNotMatch(read(prefix+file).toString(), /1\.0\.0-rc1|v1\.2\.12 installed/);
     }
     assert.ok(checksums.includes(edition.zip_sha256+'  '+edition.file+'\n'));
-    assert.ok(edition.url.endsWith('/v1.3.1/'+edition.file));
+    assert.ok(edition.url.endsWith('/v1.3.2/'+edition.file));
   }
 });

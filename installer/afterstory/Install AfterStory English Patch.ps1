@@ -122,5 +122,5 @@ try {
    throw
   }
  } finally { Remove-Item -LiteralPath $stage -Recurse -Force }
- Write-Host 'AfterStory English v1.0.1 installed. Originals are in MAO-original-backup. Start OT_AFTER.EXE.' -ForegroundColor Green
+ Write-Host 'AfterStory English v1.0.2 installed. Originals are in MAO-original-backup. Start OT_AFTER.EXE.' -ForegroundColor Green
 } catch { Write-Host ('Installation stopped: ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }

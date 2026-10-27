@@ -122,5 +122,5 @@ try {
    throw
   }
  } finally { Remove-Item -LiteralPath $stage -Recurse -Force }
- Write-Host 'Prelude English v1.0.1 installed. Originals are in MAO-original-backup. Start OT_PREDE.EXE.' -ForegroundColor Green
+ Write-Host 'Prelude English v1.0.2 installed. Originals are in MAO-original-backup. Start OT_PREDE.EXE.' -ForegroundColor Green
 } catch { Write-Host ('Installation stopped: ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }

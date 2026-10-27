@@ -54,7 +54,7 @@ export default function Home() {
               and natural literary English. Now including <em>Prelude</em> and <em>AfterStory</em>.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.1">
+              <a className="button button-primary" href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.2">
                 Download patches
                 <span aria-hidden="true">↓</span>
               </a>
@@ -64,7 +64,7 @@ export default function Home() {
               </a>
             </div>
             <p className="compatibility">
-              <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.1">Release v1.3.1</a>
+              <a href="https://github.com/MAO-TLs/oretsuba/releases/tag/v1.3.2">Release v1.3.2</a>
               {" "}· Japanese retail games required · <a href="#install">Installation instructions</a>
             </p>
           </div>
@@ -77,7 +77,7 @@ export default function Home() {
         <div className="shell release-grid">
           <div>
             <span className="release-label">Version</span>
-            <strong>v1.3.1</strong>
+            <strong>v1.3.2</strong>
           </div>
           <div>
             <span className="release-label">Script coverage</span>

@@ -6,8 +6,8 @@ test('public release retains the existing design and links its release',()=>{
  const home=read('dist/client/index.html');
  const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/tag\/v1.3.1/);
- assert.equal(release.version,'1.3.1');
+ assert.match(home,/releases\/tag\/v1.3.2/);
+ assert.equal(release.version,'1.3.2');
  assert.equal(release.v120_unique_refs,8722);
  assert.equal(release.hepburn_name_dialogue_rows,1044);
  assert.equal(release.american_english_dialogue_rows,75);
@@ -30,7 +30,7 @@ test('public release retains the existing design and links its release',()=>{
 test('all 614 scripts and all 84760 bilingual entries are coherent',()=>{
  const index=JSON.parse(read('public/script-data/index.json'));
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
- assert.equal(index.version,'v1.3.1');assert.equal(corpus.version,'v1.3.1');
+ assert.equal(index.version,'v1.3.2');assert.equal(corpus.version,'v1.3.2');
  assert.equal(index.totalLines,84760);assert.equal(corpus.totalLines,84760);
  assert.ok(!index.routes.some(r=>r.id==='section-03c'));
  const merged=index.routes.find(r=>r.id==='section-03');assert.equal(merged.lineCount,20062);assert.equal(merged.scripts.length,116);

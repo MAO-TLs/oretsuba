@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.1
+ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.2
 
 Requires the supported Japanese retail Prelude installation. This release
 checks exact archive hashes, includes no game, and backs up the
@@ -31,3 +31,7 @@ Font: MAO Gothic Q4I, derived from BIZ UDGothic under the SIL Open Font License.
 
 Unofficial, noncommercial fan translation. Original work and trademarks belong
 to their respective owners.
+
+VERSION 1.0.2
+Split-line continuation pages now remain available in the backlog and history navigation.
+The fix preserves the live reading position when returning from history.
