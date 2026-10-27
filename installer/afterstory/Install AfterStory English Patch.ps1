@@ -9,11 +9,26 @@ try {
   $GameFolder = $picker.SelectedPath
  }
  $GameFolder = (Resolve-Path -LiteralPath $GameFolder).Path
+ if (!(Test-Path -LiteralPath (Join-Path $GameFolder 'OT_AFTER.EXE'))) { throw 'Missing OT_AFTER.EXE. Choose the installed AfterStory game folder. No game files were changed.' }
  $manifest = Get-Content -LiteralPath (Join-Path $PSScriptRoot 'patch.json') -Raw | ConvertFrom-Json
  function Hash($p) { (Get-FileHash -LiteralPath $p -Algorithm SHA256).Hash.ToLowerInvariant() }
  $dataPath = Join-Path $PSScriptRoot 'patch.dat'
  $fontPath = Join-Path $PSScriptRoot 'mao-font.ttf'
  if ((Hash $dataPath) -ne $manifest.payload_sha256 -or (Hash $fontPath) -ne $manifest.font_sha256) { throw 'Patch files are damaged. Download the archive again.' }
+ $runtimeState = Join-Path $GameFolder 'MAO-runtime.json'
+ $previousRuntime = if (Test-Path -LiteralPath $runtimeState) { Get-Content -LiteralPath $runtimeState -Raw | ConvertFrom-Json } else { $null }
+ $runtimeBefore = @{}
+ foreach ($file in $manifest.runtime_files) {
+  if ($file.name -notin @('version.dll','mao-font.ttf')) { throw 'Invalid runtime filename.' }
+  if ((Hash (Join-Path $PSScriptRoot $file.name)) -ne $file.sha256) { throw 'Runtime files are damaged.' }
+  $dest = Join-Path $GameFolder $file.name
+  if (Test-Path -LiteralPath $dest) {
+   $oldHash = Hash $dest
+   if ($oldHash -ne $file.sha256 -and (!$previousRuntime -or $oldHash -ne $previousRuntime.files.($file.name))) { throw "An unrelated $($file.name) already exists. No game files were changed." }
+   $runtimeBefore[$file.name] = [IO.File]::ReadAllBytes($dest)
+  } else { $runtimeBefore[$file.name] = $null }
+ }
+ $runtimeBefore['MAO-runtime.json'] = if (Test-Path -LiteralPath $runtimeState) { [IO.File]::ReadAllBytes($runtimeState) } else { $null }
  $pending = @()
  foreach ($file in $manifest.files) {
   $path = Join-Path $GameFolder $file.name
@@ -23,7 +38,9 @@ try {
   if ($hash -in @($file.previous_output_sha256)) {
    $saved = Join-Path (Join-Path $GameFolder 'MAO-original-backup') $file.name
    if (!(Test-Path -LiteralPath $saved) -or (Hash $saved) -ne $file.source_sha256) { throw 'Updating requires the matching original in MAO-original-backup. No game files were changed.' }
-  } elseif ($hash -ne $file.source_sha256) { throw "$($file.name) does not match Japanese AfterStory installation or this patch. No game files were changed." }
+  } elseif ($hash -ne $file.source_sha256) {
+   throw "$($file.name) does not match Japanese AfterStory installation or this patch. No game files were changed."
+  }
   $pending += $file
  }
  $stage = Join-Path $GameFolder ('MAO-patch-' + [Guid]::NewGuid().ToString('N'))
@@ -51,7 +68,8 @@ try {
    } finally { $source.Dispose(); $data.Dispose(); $target.Dispose() }
    if ((Hash $targetPath) -ne $file.output_sha256 -or (Get-Item -LiteralPath $targetPath).Length -ne $file.output_size) { throw 'Output verification failed. No game files were changed.' }
   }
-  # Install the licensed font for this user, without administrator privileges.
+  # Legacy packages registered globally; current runtime loads its own font.
+  if (!$manifest.runtime_files) {
   $fontDir = Join-Path $env:LOCALAPPDATA 'Microsoft\Windows\Fonts'
   New-Item -ItemType Directory -Force -Path $fontDir | Out-Null
   $installedFont = Join-Path $fontDir ('MAOGothicQ4I-' + $manifest.font_sha256 + '.ttf')
@@ -69,6 +87,7 @@ try {
   if ([MaoFonts]::AddFontResourceEx($installedFont, 0, [IntPtr]::Zero) -eq 0) { throw 'Could not load the bundled font. No game files were changed.' }
   $result = [IntPtr]::Zero
   $null = [MaoFonts]::SendMessageTimeout([IntPtr]0xffff, 0x1d, [IntPtr]::Zero, [IntPtr]::Zero, 2, 1000, [ref]$result)
+  }
   $backup = Join-Path $GameFolder 'MAO-original-backup'
   New-Item -ItemType Directory -Force -Path $backup | Out-Null
   foreach ($file in $pending) {
@@ -80,11 +99,28 @@ try {
    if (!(Test-Path -LiteralPath $saved)) { Copy-Item -LiteralPath (Join-Path $GameFolder $file.name) -Destination $saved }
   }
   try {
+   foreach ($file in $manifest.runtime_files) {
+    $dest = Join-Path $GameFolder $file.name
+    if (!(Test-Path -LiteralPath $dest) -or (Hash $dest) -ne $file.sha256) { Copy-Item -LiteralPath (Join-Path $PSScriptRoot $file.name) -Destination $dest -Force }
+   }
    foreach ($file in $pending) { Copy-Item -LiteralPath (Join-Path $stage $file.name) -Destination (Join-Path $GameFolder $file.name) -Force }
+   $runtimeHashes = @{}
+   foreach ($file in $manifest.runtime_files) { $runtimeHashes[$file.name] = $file.sha256 }
+   @{ version=$manifest.version; files=$runtimeHashes } | ConvertTo-Json | Set-Content -LiteralPath $runtimeState -Encoding UTF8
+   if (Test-Path 'HKCU:\Software\Wine') {
+    $override = 'HKCU:\Software\Wine\AppDefaults\OT_AFTER.EXE\DllOverrides'
+    New-Item -Path $override -Force | Out-Null
+    New-ItemProperty -Path $override -Name 'version' -Value 'native,builtin' -PropertyType String -Force | Out-Null
+   }
   } catch {
    foreach ($file in $pending) { Copy-Item -LiteralPath (Join-Path $backup $file.name) -Destination (Join-Path $GameFolder $file.name) -Force }
+   foreach ($name in $runtimeBefore.Keys) {
+    $dest = Join-Path $GameFolder $name
+    if ($null -eq $runtimeBefore[$name]) { Remove-Item -LiteralPath $dest -ErrorAction SilentlyContinue }
+    else { [IO.File]::WriteAllBytes($dest,$runtimeBefore[$name]) }
+   }
    throw
   }
  } finally { Remove-Item -LiteralPath $stage -Recurse -Force }
- Write-Host 'AfterStory English v1.0.0 installed. Originals are in MAO-original-backup. Start OT_AFTER.EXE.' -ForegroundColor Green
+ Write-Host 'AfterStory English v1.0.1 installed. Originals are in MAO-original-backup. Start OT_AFTER.EXE.' -ForegroundColor Green
 } catch { Write-Host ('Installation stopped: ' + $_.Exception.Message) -ForegroundColor Red; exit 1 }

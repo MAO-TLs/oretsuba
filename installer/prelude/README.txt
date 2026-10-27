@@ -1,8 +1,13 @@
-ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.0
+ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.1
 
 Requires the supported Japanese retail Prelude installation. This release
-candidate checks exact source hashes, includes no game, and backs up the three
+checks exact archive hashes, includes no game, and backs up the
 changed files before installing. Close the game first.
+
+OT_PREDE.EXE is never modified, hashed, backed up, or replaced. Existing
+official unprotected or user-supplied no-disc executables are preserved byte
+for byte. The included version.dll enforces the exact base-game MAO font and
+provides English native menus and settings without changing the executable.
 
 WINDOWS 10 / 11
 1. Extract the entire ZIP.
@@ -13,9 +18,11 @@ macOS / WINE
 Run:
   python3 /path/to/extracted-patch/install.py "/path/to/Prelude/game/folder"
 
-The installer registers MAO Gothic Q4I without overwriting an existing font
-file. Restore SCRIPT.LPK, SYS.LPK, and OT_PREDE.EXE from MAO-original-backup to
-remove the patch. Keep saves backed up.
+The bundled font is loaded privately from the game folder. For Wine, set the
+version DLL override to native, then builtin (version=n,b) in your wrapper.
+Restore SCRIPT.LPK and SYS.LPK from MAO-original-backup and remove the added
+version.dll, mao-font.ttf and MAO-runtime.json to remove the patch. Keep saves
+backed up.
 
 Credits
 Project Lead: MAO
