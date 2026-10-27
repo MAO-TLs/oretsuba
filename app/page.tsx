@@ -23,6 +23,14 @@ export default function Home() {
             aria-hidden="true"
           />
         </picture>
+<picture>
+          <img
+            className="hero-backdrop hero-backdrop-soft"
+            src="./shinjuku-neon-night.png"
+            alt=""
+            aria-hidden="true"
+          />
+        </picture>
         <SiteNav
           releaseHref="./"
           scriptHref="./script/"

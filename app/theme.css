@@ -14,3 +14,11 @@ footer { background: #1f0a18; }
 @media(min-width:901px) { .chapter-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); } .chapter-card { min-width: 0; padding: 24px 16px; gap: 12px; } }
 
 @media (min-width: 901px) { .chapter-grid.game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Blur only the artwork, fading continuously through the upper quarter. */
+.hero-backdrop-soft {
+  filter: blur(14px);
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.75) 6%, rgba(0,0,0,.35) 13%, rgba(0,0,0,.08) 20%, transparent 25%);
+  mask-image: linear-gradient(to bottom, #000, rgba(0,0,0,.75) 6%, rgba(0,0,0,.35) 13%, rgba(0,0,0,.08) 20%, transparent 25%);
+}
