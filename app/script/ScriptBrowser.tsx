@@ -461,7 +461,7 @@ export function ScriptBrowser() {
   const [todokanaiError, setTodokanaiError] = useState("");
 
   useEffect(() => {
-    fetch("../script-data/index.json")
+    fetch("../script-data/index.json", { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error("Could not load the script index.");
         return response.json();
@@ -686,7 +686,7 @@ export function ScriptBrowser() {
     if (!script) return;
 
     const controller = new AbortController();
-    fetch(`../script-data/${script.file}`, { signal: controller.signal })
+    fetch(`../script-data/${script.file}`, { signal: controller.signal, cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`Could not load script ${scriptId}.`);
         return response.json();
@@ -867,7 +867,7 @@ export function ScriptBrowser() {
 
     const controller = new AbortController();
     const filename = index.concordance?.file ?? "concordance.json";
-    fetch(`../script-data/${filename}`, { signal: controller.signal })
+    fetch(`../script-data/${filename}`, { signal: controller.signal, cache: "no-cache" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Could not load the full-corpus concordance.");

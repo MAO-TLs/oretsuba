@@ -6,8 +6,8 @@ test('public release retains the existing design and links its release',()=>{
  const home=read('dist/client/index.html');
  const release=JSON.parse(read('public/release.json'));
  assert.match(home,/ORETACHI\sNI<br\/>TSUBASA\sWA<br\/>NAI/);
- assert.match(home,/releases\/tag\/v1.3.3/);
- assert.equal(release.version,'1.3.3');
+ assert.match(home,/releases\/tag\/v1.3.4/);
+ assert.equal(release.version,'1.3.4');
  assert.equal(release.v120_unique_refs,8722);
  assert.equal(release.hepburn_name_dialogue_rows,1044);
  assert.equal(release.american_english_dialogue_rows,75);
@@ -21,7 +21,7 @@ test('public release retains the existing design and links its release',()=>{
  assert.equal(release.speaker_label_fit_forms,79);
  assert.equal(release.speaker_label_fit_records,229);
  assert.equal(release.speaker_nameplate_glyph_limit,17);
- assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.13\\.zip\\n'));
+ assert.match(read('public/SHA256SUMS.txt'),new RegExp('^'+release.zip_sha256+'  OreTsuba-English-v1\\.2\\.14\\.zip\\n'));
  assert.doesNotMatch(home,/Local preview|Local test build|noindex|disabled|In preparation/);
  assert.match(home,/\/oretsuba\/assets\//);
  assert.doesNotMatch(home,/"\/assets\//);
@@ -30,7 +30,7 @@ test('public release retains the existing design and links its release',()=>{
 test('all 614 scripts and all 84760 bilingual entries are coherent',()=>{
  const index=JSON.parse(read('public/script-data/index.json'));
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
- assert.equal(index.version,'v1.3.3');assert.equal(corpus.version,'v1.3.3');
+ assert.equal(index.version,'v1.3.4');assert.equal(corpus.version,'v1.3.4');
  assert.equal(index.totalLines,84760);assert.equal(corpus.totalLines,84760);
  assert.ok(!index.routes.some(r=>r.id==='section-03c'));
  const merged=index.routes.find(r=>r.id==='section-03');assert.equal(merged.lineCount,20062);assert.equal(merged.scripts.length,116);
@@ -47,18 +47,18 @@ test('all 614 scripts and all 84760 bilingual entries are coherent',()=>{
  }
  assert.equal(count,84760);assert.equal(scripts,614);
 });
-test('v1.2.13 reader carries the reported display-safe dialogue revision',()=>{
+test('v1.2.14 reader carries the reported display-safe dialogue revision',()=>{
  const script=JSON.parse(read('public/script-data/s02_03f.json'));
  const line=script.lines.find(row=>row.ref==='oretsuba:section-02:s02_03f:0000e977');
  assert.equal(line.english,'“Hmm. A table ninety centimeters wide... Exactly five B5 issues of *Monthly S&M Erotichronicle* fit side by side without a gap...”');
 });
-test('v1.2.13 reader carries the engine-safe symbolic-outburst repair',()=>{
+test('v1.2.14 reader carries the engine-safe symbolic-outburst repair',()=>{
  const script=JSON.parse(read('public/script-data/s03_07b.json'));
  const line=script.lines.find(row=>row.ref==='oretsuba:section-03:s03_07b:00017a4d');
  assert.equal(line.japanese,'「○×△＃※％＆──っ！」');
  assert.equal(line.english,'“Gyaaaah!”');
 });
-test('v1.2.13 reader carries normalized names and fitted nameplates',()=>{
+test('v1.2.14 reader carries normalized names and fitted nameplates',()=>{
  const corpus=JSON.parse(read('public/script-data/concordance.json'));
  const lines=corpus.routes.flatMap(route=>route.scripts.flatMap(script=>script.lines));
  const speakers=new Set(lines.map(line=>line[3]));
@@ -67,28 +67,28 @@ test('v1.2.13 reader carries normalized names and fitted nameplates',()=>{
  assert.ok(speakers.has('Youji'));
  assert.ok(!speakers.has('Shusuke'));
  assert.ok(!speakers.has('Yoji'));
- assert.doesNotMatch(english,/\b(?:Shusuke|Yoji|Kyoya|Kurodo|Haryu)\b/);
+ assert.doesNotMatch(english,/\b(?:Shusuke|Shu|Yoji|Kyoya|Kurodo|Haryu)\b/);
  assert.ok([...speakers].every(label=>[...label].length<=17));
  assert.ok(speakers.has('Back-Row Longhair'));
  assert.ok(!speakers.has('Long-Haired Man at the Back'));
 });
 
-test('v1.2.13 pairs the italic script with its font and matching installer version',()=>{
+test('v1.2.14 pairs the italic script with its font and matching installer version',()=>{
  const release=JSON.parse(read('public/release.json'));
  const patch=JSON.parse(read('installer/patch.json'));
  assert.equal(release.inline_italics,true);
  assert.equal(release.italic_display_rows,970);
  assert.equal(release.ampersand_display_rows,4);
- assert.equal(patch.version,'1.2.13');
+ assert.equal(patch.version,'1.2.14');
  assert.equal(patch.font_family,'MAO Gothic Q5I');
  assert.equal(patch.font_sha256,release.font_sha256);
  assert.deepEqual(patch.files.map(f=>f.output_sha256),release.files.map(f=>f.output_sha256));
- assert.match(read('installer/install.py'),/English v1\.2\.13 installed/);
- assert.match(read('installer/Install English Patch.ps1'),/English v1\.2\.13 installed/);
+ assert.match(read('installer/install.py'),/English v1\.2\.14 installed/);
+ assert.match(read('installer/Install English Patch.ps1'),/English v1\.2\.14 installed/);
  assert.doesNotMatch(read('installer/Install English Patch.ps1'),/MAOGothicQ3/);
 });
 
-test('v1.2.13 restores quotation marks and the reported wordless reaction',()=>{
+test('v1.2.14 restores quotation marks and the reported wordless reaction',()=>{
  const release=JSON.parse(read('public/release.json'));
  assert.equal(release.dialogue_quote_repairs,980);
  assert.equal(release.hayato_section_quote_repairs,304);
@@ -109,7 +109,7 @@ test('v1.2.13 restores quotation marks and the reported wordless reaction',()=>{
 });
 
 
-test('v1.2.13 uses consistent ordinary names and Western full-name order',()=>{
+test('v1.2.14 uses consistent ordinary names and Western full-name order',()=>{
  const release=JSON.parse(read('public/release.json'));
  assert.equal(release.hotfix_modified_lines,26);
  assert.equal(release.name_consistency.stage_name,'Claude Haryuu');
@@ -125,7 +125,7 @@ test('v1.2.13 uses consistent ordinary names and Western full-name order',()=>{
 });
 
 
-test('v1.2.13 preserves linked setup words in dialogue responses',()=>{
+test('v1.2.14 preserves linked setup words in dialogue responses',()=>{
  const release=JSON.parse(read('public/release.json'));
  assert.equal(release.callback_consistency_modified_lines,26);
  const line=(script,offset)=>JSON.parse(read('public/script-data/'+script+'.json')).lines.find(r=>r.ref.endsWith(':'+offset)).english;

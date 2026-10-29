@@ -2,7 +2,7 @@ V1.2.11 DIALOGUE CONSISTENCY
 - General wordplay and dialogue consistency edits across 26 lines.
 - Preserves previous translation, font, display, and engine fixes.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.13
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.14
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
@@ -81,3 +81,5 @@ To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1
 the MAO-original-backup folder from the original installation.
 
 This update includes shared-text consistency edits, corrected character names, and refined apostrophe spacing.
+
+This update aligns recurring exchanges and nickname spellings.

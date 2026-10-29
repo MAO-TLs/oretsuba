@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI AFTERSTORY — MAO English v1.0.3
+ORETACHI NI TSUBASA WA NAI AFTERSTORY — MAO English v1.0.4
 
 Requires the supported Japanese retail AfterStory installation. This release
 checks exact source hashes, includes no game, and backs up the two
@@ -41,3 +41,5 @@ Split-line continuation pages now remain available in the backlog and history na
 The fix preserves the live reading position when returning from history.
 
 This update includes shared-text consistency edits, corrected character names, and refined apostrophe spacing.
+
+This update aligns recurring exchanges and nickname spellings.
