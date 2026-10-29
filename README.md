@@ -1,8 +1,8 @@
-# Oretachi ni Tsubasa wa Nai — MAO English v1.3.2
+# Oretachi ni Tsubasa wa Nai — MAO English v1.3.3
 
 [Download and installation](https://mao-tls.github.io/oretsuba/) · [Script browser](https://mao-tls.github.io/oretsuba/script/)
 
-English patches for the main game, Prelude, and AfterStory. Each requires its corresponding Japanese retail installation. The main-game patch remains v1.2.12 and requires retail v1.00; Prelude and AfterStory have separate v1.0.2 installers.
+English patches for the main game, Prelude, and AfterStory. Each requires its corresponding Japanese retail installation. The main-game patch remains v1.2.13 and requires retail v1.00; Prelude and AfterStory have separate v1.0.3 installers.
 The release installer checks original file hashes and keeps backups. The font is BIZ UDGothic (SIL OFL).
 All three games passed targeted Wine dialogue and backlog checks. Prelude and AfterStory also passed font, English settings, save/load, and startup checks. All installers passed archive, upgrade, and backup checks. This does not claim a full playthrough or native Windows testing.
 

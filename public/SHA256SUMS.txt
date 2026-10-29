@@ -1,3 +1,3 @@
-0c4ee58eaaf69a1ee00a763c3a37ff2a0eef4cd2b9ce94fbe0afe6695518c690  OreTsuba-English-v1.2.12.zip
-2162af84df781993e3bcd345f26e6558d879aef3627766705ebb19514e7760db  OreTsuba-Prelude-English-v1.0.2.zip
-e64c0297acb65a33af1568293c163f64447d8d10bddb583a037ff5603cb5bce5  OreTsuba-AfterStory-English-v1.0.2.zip
+f894dfdd9a6cab8191a513889fea8e81a5ed7052cf750caeecfacc961b8b9921  OreTsuba-English-v1.2.13.zip
+21721c28ee1c76556f4589d894e878eae90228e34180037bd69d3a8ba0e17192  OreTsuba-Prelude-English-v1.0.3.zip
+f38d42e3943c543e7b881f83957e76283957e3c9f0bc3df5152efee56caabf8d  OreTsuba-AfterStory-English-v1.0.3.zip

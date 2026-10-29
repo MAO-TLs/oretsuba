@@ -6,7 +6,7 @@ from runtime_support import RuntimeInstall
 HERE=Path(__file__).resolve().parent
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 def main():
- p=argparse.ArgumentParser(description='Install Oretachi ni Tsubasa wa Nai ~Prelude~ English v1.0.2. Close the game first.')
+ p=argparse.ArgumentParser(description='Install Oretachi ni Tsubasa wa Nai ~Prelude~ English v1.0.3. Close the game first.')
  p.add_argument('game_folder',type=Path);p.add_argument('--no-font-install',action='store_true',help='For package verification only; the game requires the bundled font.')
  args=p.parse_args();game=args.game_folder.resolve();m=json.loads((HERE/'patch.json').read_text())
  runtime=RuntimeInstall(HERE,game,m)
@@ -36,7 +36,7 @@ def main():
    pending.append(f)
   if not args.no_font_install and not m.get('runtime_files'):
    if sys.platform=='darwin':
-    fonts=Path.home()/'Library/Fonts';fonts.mkdir(parents=True,exist_ok=True);shutil.copy2(HERE/'mao-font.ttf',fonts/'MAOGothicQ4I-Regular.ttf')
+    fonts=Path.home()/'Library/Fonts';fonts.mkdir(parents=True,exist_ok=True);shutil.copy2(HERE/'mao-font.ttf',fonts/'MAOGothicQ5I-Regular.ttf')
    elif os.name=='nt':raise ValueError('On Windows, use Install English Patch.cmd to register the font.')
    else:raise ValueError('Install the included font in your Wine environment, then rerun with --no-font-install.')
   backup=game/'MAO-original-backup';backup.mkdir(exist_ok=True)
@@ -53,7 +53,7 @@ def main():
    for f in installed:shutil.copy2(backup/f['name'],game/f['name'])
    runtime.rollback()
    raise
- print('Prelude English v1.0.2 installed. Originals are in MAO-original-backup. Restart the game and your Wine wrapper to load the font.')
+ print('Prelude English v1.0.3 installed. Originals are in MAO-original-backup. Restart the game and your Wine wrapper to load the font.')
 if __name__=='__main__':
  try:main()
  except Exception as e:print('Installation stopped: '+str(e),file=sys.stderr);sys.exit(1)

@@ -2,7 +2,7 @@ V1.2.11 DIALOGUE CONSISTENCY
 - General wordplay and dialogue consistency edits across 26 lines.
 - Preserves previous translation, font, display, and engine fixes.
 
-ORETACHI NI TSUBASA WA NAI — MAO English v1.2.12
+ORETACHI NI TSUBASA WA NAI — MAO English v1.2.13
 
 V1.2.2 DISPLAY FIXES
 - Wraps scene-skip descriptions only at English word boundaries.
@@ -18,7 +18,7 @@ WINDOWS 10 / 11
 2. Double-click "Install English Patch.cmd".
 3. Select the installed Japanese game folder containing ORE_TUBA.EXE.
 4. Start ORE_TUBA.EXE normally.
-The installer installs the bundled MAO Gothic Q4I font for your user account,
+The installer installs the bundled MAO Gothic Q5I font for your user account,
 verifies all three patched files, and backs up the originals. If the game is
 installed in a protected folder, run the installer with permission to write
 there, or use an installation in a folder you own.
@@ -31,7 +31,7 @@ The font is copied to ~/Library/Fonts. Quit and restart the Wine wrapper
 before launching the game. The opening/prologue was tested with Sikarugir;
 other wrappers and native Windows have not received a full runtime test.
 
-The English game locks its text to MAO Gothic Q4I so the selected font option
+The English game locks its text to MAO Gothic Q5I so the selected font option
 cannot change its layout. Original title and decorative chapter logos remain.
 
 TO REMOVE THE PATCH
@@ -47,7 +47,7 @@ CREDITS
 Project Lead: MAO
 Translator: GPT-6 Astra
 Special Thanks: gambs
-Font: MAO Gothic Q4I, a BIZ UDGothic derivative with half-width curly quotes and a baseline ellipsis, distributed under the SIL Open Font License; see OFL.txt.
+Font: MAO Gothic Q5I, a BIZ UDGothic derivative with half-width curly quotes and a baseline ellipsis, distributed under the SIL Open Font License; see OFL.txt.
 https://github.com/googlefonts/morisawa-biz-ud-gothic
 
 Unofficial, noncommercial fan translation. Original work and trademarks
@@ -79,3 +79,5 @@ V1.1.0
 
 To update an existing v1.0.0, v1.1.0, v1.1.1, v1.1.2, v1.1.3, v1.1.4, v1.1.5, v1.1.6, v1.2.0, v1.2.1, or v1.2.2 installation, run this installer again. Keep
 the MAO-original-backup folder from the original installation.
+
+This update includes shared-text consistency edits, corrected character names, and refined apostrophe spacing.
