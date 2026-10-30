@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./wordmark.css";
 import "./globals.css";
 import "./theme.css";
 export const metadata: Metadata = {
