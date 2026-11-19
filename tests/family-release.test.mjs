@@ -27,13 +27,13 @@ test('family sections preserve every main-game entry and have independent identi
 test('each family installer matches its release, font, payload and download checksum', () => {
   const release = json('public/release.json');
   const checksums = read('public/SHA256SUMS.txt').toString();
-  assert.equal(release.main_game_version, '1.2.14');
+  assert.equal(release.main_game_version, '1.2.15');
   assert.deepEqual(release.editions.map(e=>e.id), ['prelude','afterstory']);
   for (const edition of release.editions) {
     const prefix = 'installer/'+edition.id+'/';
     const patch = json(prefix+'patch.json');
     assert.equal(patch.version, edition.version);
-    assert.equal(patch.version, edition.id === 'prelude' ? '1.0.3' : '1.0.4');
+    assert.equal(patch.version, '1.0.4');
     assert.equal(sha(read(prefix+'patch.dat')),patch.payload_sha256);
     assert.equal(sha(read(prefix+'mao-font.ttf')),release.font_sha256);
     assert.equal(patch.font_family,'MAO Gothic Q5I');
@@ -45,6 +45,6 @@ test('each family installer matches its release, font, payload and download chec
       assert.doesNotMatch(read(prefix+file).toString(), /1\.0\.0-rc1|v1\.2\.14 installed/);
     }
     assert.ok(checksums.includes(edition.zip_sha256+'  '+edition.file+'\n'));
-    assert.ok(edition.url.endsWith('/v1.3.4/'+edition.file));
+    assert.ok(edition.url.endsWith('/v1.3.5/'+edition.file));
   }
 });

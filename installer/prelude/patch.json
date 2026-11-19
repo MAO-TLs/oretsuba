@@ -1,11 +1,11 @@
 {
   "title": "Oretachi ni Tsubasa wa Nai ~Prelude~",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "147f80a448fdea24960d2e12ae6b8baf94021c31648779ba1706569eb90826f8",
-      "output_sha256": "22dbdef5d383baf6f2747c4d8cc373842a0ee0af929b993859aa3498c3a5bdb9",
+      "output_sha256": "51f5f1173f84948b837a308686149044801f90fbe42bdb720f0a3dc52a998779",
       "output_size": 3716330,
       "operations": [
         [
@@ -386,7 +386,8 @@
       ],
       "previous_output_sha256": [
         "8e78edf0794b4290fb261336a2c00f042b06d99967fa74bdfa209f7986f1ed02",
-        "8278c2b221310fe82437bd8aabf1abcc1c7dea220d9e603ff48509979e4bcaff"
+        "8278c2b221310fe82437bd8aabf1abcc1c7dea220d9e603ff48509979e4bcaff",
+        "22dbdef5d383baf6f2747c4d8cc373842a0ee0af929b993859aa3498c3a5bdb9"
       ]
     },
     {
@@ -1713,7 +1714,7 @@
   ],
   "font_family": "MAO Gothic Q5I",
   "inline_italics": true,
-  "payload_sha256": "f0867a38afc20e87a8c4f46c86d43e0dcfabfe54b04d12018fa8cea305eed585",
+  "payload_sha256": "2b7811ce563c7a8fc847ffa31ad6fb81dd01c632e2c39194099554db4e7fd2d4",
   "font_sha256": "8c18002a406ec414067ef20feb4ef3529595afa198a5efb155cbd7fbec8f3b3b",
   "runtime_files": [
     {

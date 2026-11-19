@@ -1,4 +1,4 @@
-ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.3
+ORETACHI NI TSUBASA WA NAI ~PRELUDE~ — MAO English v1.0.4
 
 Requires the supported Japanese retail Prelude installation. This release
 checks exact archive hashes, includes no game, and backs up the

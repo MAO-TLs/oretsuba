@@ -1,10 +1,10 @@
 {
-  "version": "1.2.14",
+  "version": "1.2.15",
   "files": [
     {
       "name": "SCRIPT.LPK",
       "source_sha256": "578cd025c12d81bf094d99ece5ec87495b35143cc939e3136442fcd9b5505f3f",
-      "output_sha256": "5804a0b1fa445e1a8276fe3ae06949dcebe879a2ca5757aab0ff99bd17db7523",
+      "output_sha256": "e738c4b82d46e63df5b31f6e4e24c4e7dc4d03142a51505215985be4f894f73e",
       "output_size": 22520284,
       "previous_output_sha256": [
         "03e009d4a2e5592abb596db45caf5eab958f43a7138efe9502f2c6c74575de35",
@@ -39,7 +39,8 @@
         "373d8ac348e7d998a01363206d689d8739360eccd8a5e2c880cd7febe9e01521",
         "7d721581db3dbe907332417944912786564b702532b72b62c77c9461c8672aa1",
         "023ddc9f5bc102683c0baede5c366407042bcac1a38f97042d9b8ee694dc7790",
-        "1f06e8e30d78c3139944058ba776ddae46c4f955a56a1ceadbf8180074aca383"
+        "1f06e8e30d78c3139944058ba776ddae46c4f955a56a1ceadbf8180074aca383",
+        "5804a0b1fa445e1a8276fe3ae06949dcebe879a2ca5757aab0ff99bd17db7523"
       ],
       "operations": [
         [
@@ -7746,7 +7747,7 @@
       ]
     }
   ],
-  "payload_sha256": "c14806714fdc03f2e379917584b557f1c0db401c97da4aa40983fd18b8d84f10",
+  "payload_sha256": "afe52503a0aa181ea6df99dcc9de3e7b93d2646a80508c4805ae06cce481b718",
   "font_sha256": "8c18002a406ec414067ef20feb4ef3529595afa198a5efb155cbd7fbec8f3b3b",
   "font_family": "MAO Gothic Q5I",
   "inline_italics": true
